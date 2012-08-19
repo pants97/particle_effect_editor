@@ -31,7 +31,7 @@ package particleEditor.effect.param {
 				var duringTime:Number = duringTimeComboBox.getValue()?localVars[duringTimeComboBox.getValue()]:1000;
 				_param.startTime = startTime;
 				_param.duringTime = duringTime;
-			}
+			};
 		}
 		
 		override public function importCode(xml:XML):void

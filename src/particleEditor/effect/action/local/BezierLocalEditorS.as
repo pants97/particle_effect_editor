@@ -61,7 +61,7 @@ class BezierParamS extends EditorWithPropertyBaseS
 			var y2:Number = array[1]?localVars[array[1]]:0;
 			var z2:Number = array[2]?localVars[array[2]]:0;
 			param["BezierCurvelocal"] = [new Vector3D(x1, y1, z1), new Vector3D(x2, y2, z2)];
-		}
+		};
 	}
 	
 	override public function importCode(xml:XML):void

@@ -57,7 +57,7 @@ class DriftParamS extends EditorWithPropertyBaseS
 			var z:Number = array[2]?localVars[array[2]]:0;
 			var cycle:Number = cycleComboBox.getValue()?localVars[cycleComboBox.getValue()]:10;
 			param["DriftLocal"] = new Vector3D(x, y, z, cycle);
-		}
+		};
 	}
 	
 	override public function importCode(xml:XML):void

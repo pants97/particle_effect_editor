@@ -83,7 +83,7 @@ class ColorParamS extends EditorWithPropertyBaseS
 			var blueOffset:Number = blueOffsetComboBox.getValue()?localVars[blueOffsetComboBox.getValue()]:0;
 			var alphaOffset:Number = alphaOffsetComboBox.getValue()?localVars[alphaOffsetComboBox.getValue()]:0;
 			param["RandomColorLocal"] = new ColorTransform(redMultiplier, greeMultiplier, blueMultiplier, alphaMultiplier, redOffset, greenOffset, blueOffset, alphaOffset);
-		}
+		};
 	}
 	
 	override public function importCode(xml:XML):void

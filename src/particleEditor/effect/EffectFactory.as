@@ -129,7 +129,7 @@ package  particleEditor.effect {
 				{
 					handler(param, localVars);
 				});
-			}
+			};
 		}
 		
 		public function getSystemPane():JPanel

@@ -26,7 +26,7 @@ package particleEditor.effect.param.vars {
 			innerRadius.setMinMax(0);
 			
 			outerRadius = new NumberInput("outer radius","10",2, 4);
-			outerRadius.setMinMax(0)
+			outerRadius.setMinMax(0);
 			
 			centerVector = new Vector3dInput("center:");
 			

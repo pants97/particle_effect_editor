@@ -80,7 +80,7 @@ package  particleEditor.effect {
 				{
 					handler(param, localVars);
 				});
-			}
+			};
 		}
 		
 	}

@@ -58,7 +58,7 @@ import flash.display.Sprite;
 
 class LineChart extends Sprite
 {
-	protected var _data:Array
+	protected var _data:Array;
 	protected var _chartHolder:Shape;
 	protected var _width:Number = 0;
 	protected var _height:Number = 0;

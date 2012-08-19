@@ -62,7 +62,7 @@ package particleEditor.inputer {
 			else
 			{
 				var decode:Base64Decoder = new Base64Decoder();
-				decode.decode(value)
+				decode.decode(value);
 				onRead(decode.toByteArray());
 			}
 		}

@@ -76,7 +76,7 @@ class CircleParam extends EditorWithPropertyBase
 			var radius:Number = radiusComboBox.getValue()?localVars[radiusComboBox.getValue()]:10;
 			var cycle:Number = cycleComboBox.getValue()?localVars[cycleComboBox.getValue()]:10;
 			param["CircleLocal"] = new Vector3D(radius, cycle);
-		}
+		};
 	}
 	
 	override public function getExportCode():XML

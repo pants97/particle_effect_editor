@@ -62,7 +62,7 @@ class AccelerateParam extends EditorWithPropertyBase
 			var y:Number = array[1]?localVars[array[1]]:0;
 			var z:Number = array[2]?localVars[array[2]]:0;
 			param["AccelerateLocal"] = new Vector3D(x, y, z);
-		}
+		};
 	}
 	
 	override public function getExportCode():XML

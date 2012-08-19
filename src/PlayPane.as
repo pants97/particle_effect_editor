@@ -41,7 +41,7 @@ package
 			setBorder(new EmptyBorder(new LineBorder(new EmptyBorder(null, new Insets(5, 5, 5, 5))), new Insets(5, 5, 5, 5)));
 			
 			_scrollBar = new JScrollBar(AsWingConstants.HORIZONTAL, 0, 1, 0, 100);
-			_scrollBar.setBackground(ASColor.HALO_GREEN)
+			_scrollBar.setBackground(ASColor.HALO_GREEN);
 			var pane:JPanel;
 			pane = new JPanel(new FlowLayout(AsWingConstants.CENTER));
 			_nowInput = new IntInput("now", "0", 2, 3);
