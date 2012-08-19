@@ -26,7 +26,6 @@ package particleEditor.effect.param {
 		{
 			return function(_param:ParticleParam, localVars:Dictionary):void
 			{
-				var afsdf:*= startTimeComboBox.getValue();
 				var startTime:Number = startTimeComboBox.getValue()?localVars[startTimeComboBox.getValue()]:0;
 				var duringTime:Number = duringTimeComboBox.getValue()?localVars[duringTimeComboBox.getValue()]:1000;
 				_param.startTime = startTime;

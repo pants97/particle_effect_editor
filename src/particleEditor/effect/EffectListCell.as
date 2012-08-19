@@ -3,17 +3,13 @@ package particleEditor.effect {
 	import org.aswing.JCheckBox;
 	import org.aswing.JLabel;
 	import org.aswing.JList;
-	import org.aswing.JLoadPane;
 	import org.aswing.JPanel;
 	import org.aswing.ListCell;
 	import org.aswing.event.AWEvent;
 	
-	
-	
 	public class EffectListCell implements ListCell
 	{
 		private var pane:JPanel;
-		private var loadPane:JLoadPane;
 		private var label:JLabel;
 		private var check:JCheckBox;
 		private var value:EffectFactory;

@@ -1,5 +1,4 @@
 package particleEditor.effect.action {
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.edit.IImportable;
 	import particleEditor.edit.LocalActionProperty;
 	import particleEditor.edit.Property;
@@ -28,7 +27,6 @@ package particleEditor.effect.action {
 		{
 			var actions:Array = [];
 			var i:int;
-			var _action:EditorWithPropertyBaseS;
 			var property:Property;
 			
 			var listModel:Array;

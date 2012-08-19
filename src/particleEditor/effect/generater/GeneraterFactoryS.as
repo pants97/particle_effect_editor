@@ -1,4 +1,5 @@
-package  particleEditor.effect.generater {
+package particleEditor.effect.generater
+{
 	import a3dparticle.generater.GeneraterBase;
 
 	import particleEditor.edit.EditorBaseS;
@@ -6,16 +7,13 @@ package  particleEditor.effect.generater {
 	import particleEditor.edit.IImportable;
 	import particleEditor.effect.generater.material.MaterialFactoryS;
 	import particleEditor.effect.generater.shape.ShapeFactoryS;
-	import particleEditor.effect.generater.subGenerate.SingleGeneraterEditorS;
-	import particleEditor.effect.generater.subGenerate.WeightGeneraterEditorS;
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
 	public class GeneraterFactoryS implements IImportable
 	{
-		private static var generaterEditors:Array = [ new EditorDefinition("single", SingleGeneraterEditorS), new EditorDefinition("weight", WeightGeneraterEditorS)];
-		
+
 		private var _shapeFactory:ShapeFactoryS;
 		
 		private var _materialFactory:MaterialFactoryS;

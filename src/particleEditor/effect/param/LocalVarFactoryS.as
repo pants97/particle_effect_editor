@@ -1,4 +1,5 @@
-package  particleEditor.effect.param {
+package particleEditor.effect.param
+{
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.IImportable;
 	import particleEditor.edit.Property;
@@ -9,9 +10,6 @@ package  particleEditor.effect.param {
 	 */
 	public class LocalVarFactoryS  implements IImportable
 	{
-		
-		private static const varEditors:Array = [ new EditorDefinition("const number", ConstNumberVarEditorS), new EditorDefinition("random number", RandomNumberVarEditorS), new EditorDefinition("ease number", EaseNumberEditorS),
-												 new EditorDefinition("random circle", RandomCircleVarEditorS),new EditorDefinition("random globe", RandomGlobeVarEditorS) ];
 		
 		private var _varsModel:Array = new Array();
 		

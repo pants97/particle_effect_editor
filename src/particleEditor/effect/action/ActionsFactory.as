@@ -59,7 +59,6 @@ package particleEditor.effect.action {
 		{
 			var actions:Array = [];
 			var i:int;
-			var _action:ActionEditorBase;
 			var property:Property;
 			
 			var listModel:VectorListModel;

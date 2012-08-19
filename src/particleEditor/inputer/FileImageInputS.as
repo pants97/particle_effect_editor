@@ -47,7 +47,6 @@ package particleEditor.inputer {
 		
 		private function onLoader(e:Event):void
 		{
-			var bitmap:Bitmap = Bitmap(e.target.content);
 			bitmapData = Bitmap(e.target.content).bitmapData;
 			dispatchEvent(new Event(Event.COMPLETE));
 		}

@@ -43,7 +43,7 @@ package particleEditor.effect.generater.material {
 		
 		private function changeColor(value:ASColor):void
 		{
-			this.color=value
+			this.color=value;
 			colorInput.setInputText(color.getARGB().toString(16));
 		}
 		

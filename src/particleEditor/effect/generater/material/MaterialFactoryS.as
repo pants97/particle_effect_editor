@@ -1,4 +1,5 @@
-package particleEditor.effect.generater.material {
+package particleEditor.effect.generater.material
+{
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.edit.IImportable;
@@ -9,9 +10,6 @@ package particleEditor.effect.generater.material {
 	 */
 	public class MaterialFactoryS implements IImportable
 	{
-		
-		private static const materialEditors:Array = [new EditorDefinition("color material", ColorMaterialEditorS),new EditorDefinition("bitmap material",BitmapMaterialEditorS)];
-		
 		
 		private var _materialsModel:Array = new Array();
 		
