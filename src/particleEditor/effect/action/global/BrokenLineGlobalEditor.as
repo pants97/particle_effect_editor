@@ -1,13 +1,14 @@
-package particleEditor.effect.action.global
-{
-	import a3dparticle.animators.actions.ActionBase;
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.brokenline.BrokenLineGlobal;
+
 	import particleEditor.effect.action.ActionEditorBase;
-	import flash.events.Event;
-	import flash.geom.Vector3D;
+
 	import org.aswing.JButton;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
+
+	import flash.events.Event;
+	import flash.geom.Vector3D;
 	
 	/**
 	 * ...
@@ -83,14 +84,16 @@ package particleEditor.effect.action.global
 	}
 
 }
-import flash.events.Event;
+import particleEditor.inputer.NumberInput;
+import particleEditor.inputer.Vector3dInput;
+
 import org.aswing.ASColor;
-import org.aswing.border.LineBorder;
 import org.aswing.JButton;
 import org.aswing.JPanel;
 import org.aswing.SoftBoxLayout;
-import particleEditor.inputer.NumberInput;
-import particleEditor.inputer.Vector3dInput;
+import org.aswing.border.LineBorder;
+
+import flash.events.Event;
 
 class SegmentPane extends JPanel
 {

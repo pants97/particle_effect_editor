@@ -1,10 +1,12 @@
-package particleEditor
-{
+package particleEditor {
 	import a3dparticle.ParticlesContainer;
-	import flash.events.Event;
+
+	import particleEditor.edit.IExportable;
+	import particleEditor.effect.EffectFactory;
+	import particleEditor.effect.EffectListCell;
+
 	import org.aswing.ASColor;
 	import org.aswing.AsWingConstants;
-	import org.aswing.event.AWEvent;
 	import org.aswing.FlowLayout;
 	import org.aswing.GeneralListCellFactory;
 	import org.aswing.JButton;
@@ -13,9 +15,9 @@ package particleEditor
 	import org.aswing.JScrollPane;
 	import org.aswing.SoftBoxLayout;
 	import org.aswing.VectorListModel;
-	import particleEditor.edit.IExportable;
-	import particleEditor.effect.EffectFactory;
-	import particleEditor.effect.EffectListCell;
+	import org.aswing.event.AWEvent;
+
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng

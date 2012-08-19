@@ -1,16 +1,18 @@
 package particleEditor.effect.generater.subGenerate 
 {
-	import a3dparticle.generater.GeneraterBase;
 	import a3dparticle.generater.MutiWeightGenerater;
 	import a3dparticle.particle.ParticleSample;
-	import flash.events.Event;
+
+	import particleEditor.edit.EditorBase;
+	import particleEditor.edit.Property;
+	import particleEditor.inputer.IntInput;
+
 	import org.aswing.JButton;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
 	import org.aswing.VectorListModel;
-	import particleEditor.edit.EditorBase;
-	import particleEditor.edit.Property;
-	import particleEditor.inputer.IntInput;
+
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -85,12 +87,14 @@ package particleEditor.effect.generater.subGenerate
 		}	
 	}
 }
-import flash.events.Event;
 import particleEditor.inputer.ComboBoxInput;
 import particleEditor.inputer.IntInput;
+
 import org.aswing.JButton;
 import org.aswing.JPanel;
 import org.aswing.VectorListModel;
+
+import flash.events.Event;
 
 class WeightSampePane extends JPanel
 {

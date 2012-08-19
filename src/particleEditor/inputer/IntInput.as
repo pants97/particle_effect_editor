@@ -1,11 +1,10 @@
-package particleEditor.inputer
-{
-	
-	import flash.events.Event;
+package particleEditor.inputer {
 	import org.aswing.event.AWEvent;
 	import org.aswing.event.FocusKeyEvent;
+
+	import flash.events.Event;
 	import flash.ui.Keyboard;
-	import flash.events.MouseEvent;
+	
 	
 	public class IntInput extends LabelInput
 	{

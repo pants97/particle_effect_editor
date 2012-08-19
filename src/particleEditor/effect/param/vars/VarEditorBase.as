@@ -1,10 +1,11 @@
-package particleEditor.effect.param.vars
-{
-	import flash.events.Event;
-	import org.aswing.event.AWEvent;
-	import org.aswing.VectorListModel;
+package particleEditor.effect.param.vars {
 	import particleEditor.edit.Property;
 	import particleEditor.edit.VarNameEditorBase;
+
+	import org.aswing.VectorListModel;
+	import org.aswing.event.AWEvent;
+
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng

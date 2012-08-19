@@ -1,5 +1,4 @@
-package particleEditor.effect.action
-{
+package particleEditor.effect.action {
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.edit.IImportable;

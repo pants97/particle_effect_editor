@@ -1,6 +1,6 @@
-package particleEditor
-{
+package particleEditor {
 	import a3dparticle.ParticlesContainer;
+
 	import particleEditor.edit.IImportable;
 	import particleEditor.effect.EffectFactoryS;
 	/**

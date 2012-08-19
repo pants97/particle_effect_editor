@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.color.RandomColorLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
@@ -39,10 +39,12 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.ColorTransform;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
+
+import flash.geom.ColorTransform;
+import flash.utils.Dictionary;
 
 class ColorParamS extends EditorWithPropertyBaseS
 {

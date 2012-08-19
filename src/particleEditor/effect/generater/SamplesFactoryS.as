@@ -47,7 +47,9 @@ package particleEditor.effect.generater
 
 import a3dparticle.particle.ParticleMaterialBase;
 import a3dparticle.particle.ParticleSample;
+
 import away3d.core.base.SubGeometry;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.edit.Property;
 import particleEditor.inputer.ComboBoxInputS;

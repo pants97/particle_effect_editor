@@ -1,13 +1,11 @@
-package  particleEditor.utils
-{
+package  particleEditor.utils {
+	import org.aswing.JOptionPane;
+
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.net.FileFilter;
-	import flash.utils.ByteArray;
-	import org.aswing.AsWingManager;
-	import org.aswing.JOptionPane;
-	import org.aswing.UIManager;
 	import flash.system.Capabilities;
+	import flash.utils.ByteArray;
 	import flash.utils.getDefinitionByName;
 	/**
 	 * make sure this can be compiled in both player and air environment 

@@ -1,15 +1,6 @@
-package  particleEditor.effect.generater
-{
+package  particleEditor.effect.generater {
 	import a3dparticle.generater.GeneraterBase;
-	import org.aswing.ASColor;
-	import org.aswing.BorderLayout;
-	import org.aswing.event.AWEvent;
-	import org.aswing.JComboBox;
-	import org.aswing.JLabel;
-	import org.aswing.JPanel;
-	import org.aswing.SoftBoxLayout;
-	import org.aswing.util.Reflection;
-	import org.aswing.VectorListModel;
+
 	import particleEditor.edit.EditorBase;
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.IExportable;
@@ -17,6 +8,16 @@ package  particleEditor.effect.generater
 	import particleEditor.effect.generater.shape.ShapeFactory;
 	import particleEditor.effect.generater.subGenerate.SingleGeneraterEditor;
 	import particleEditor.effect.generater.subGenerate.WeightGeneraterEditor;
+
+	import org.aswing.ASColor;
+	import org.aswing.BorderLayout;
+	import org.aswing.JComboBox;
+	import org.aswing.JLabel;
+	import org.aswing.JPanel;
+	import org.aswing.SoftBoxLayout;
+	import org.aswing.VectorListModel;
+	import org.aswing.event.AWEvent;
+	import org.aswing.util.Reflection;
 	/**
 	 * ...
 	 * @author liaocheng

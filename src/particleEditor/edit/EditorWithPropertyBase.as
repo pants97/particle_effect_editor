@@ -1,15 +1,9 @@
 package particleEditor.edit 
 {
-	import org.aswing.ASColor;
-	import org.aswing.border.EmptyBorder;
-	import org.aswing.border.LineBorder;
-	import org.aswing.Container;
-	import org.aswing.ext.Folder;
-	import org.aswing.Insets;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
-	import org.aswing.util.Reflection;
 	import org.aswing.VectorListModel;
+	import org.aswing.ext.Folder;
 	/**
 	 * ...
 	 * @author liaocheng

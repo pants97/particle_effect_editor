@@ -1,9 +1,10 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.color.RandomColorLocal;
-	import org.aswing.VectorListModel;
+
 	import particleEditor.edit.EditorWithPropertyBase;
 	import particleEditor.inputer.BooleanInput;
+
+	import org.aswing.VectorListModel;
 	/**
 	 * ...
 	 * @author Cheng Liao
@@ -52,11 +53,14 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.ColorTransform;
-import flash.utils.Dictionary;
-import org.aswing.VectorListModel;
+
 import particleEditor.edit.EditorWithPropertyBase;
 import particleEditor.inputer.ComboBoxInput;
+
+import org.aswing.VectorListModel;
+
+import flash.geom.ColorTransform;
+import flash.utils.Dictionary;
 
 class ColorParam extends EditorWithPropertyBase
 {

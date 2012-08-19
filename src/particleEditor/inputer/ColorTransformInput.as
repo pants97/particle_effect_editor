@@ -1,11 +1,11 @@
-package particleEditor.inputer
-{
-	import flash.events.Event;
-	import flash.geom.ColorTransform;
+package particleEditor.inputer {
 	import org.aswing.JButton;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
 	import org.aswing.JTextField;
+
+	import flash.events.Event;
+	import flash.geom.ColorTransform;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -72,20 +72,12 @@ package particleEditor.inputer
 	}
 
 }
-import flash.display.Shape;
-import flash.events.Event;
-import flash.events.MouseEvent;
-import flash.geom.ColorTransform;
-import flash.geom.Transform;
 import org.aswing.ASColor;
-import org.aswing.AssetPane;
 import org.aswing.AsWingConstants;
 import org.aswing.AsWingUtils;
+import org.aswing.AssetPane;
 import org.aswing.BorderLayout;
-import org.aswing.event.InteractiveEvent;
-import org.aswing.ext.Form;
 import org.aswing.FlowLayout;
-import org.aswing.geom.IntDimension;
 import org.aswing.JAdjuster;
 import org.aswing.JButton;
 import org.aswing.JColorChooser;
@@ -94,6 +86,15 @@ import org.aswing.JLabel;
 import org.aswing.JPanel;
 import org.aswing.JSpacer;
 import org.aswing.SoftBoxLayout;
+import org.aswing.event.InteractiveEvent;
+import org.aswing.ext.Form;
+import org.aswing.geom.IntDimension;
+
+import flash.display.Shape;
+import flash.events.Event;
+import flash.events.MouseEvent;
+import flash.geom.ColorTransform;
+import flash.geom.Transform;
 
 class ColorTransformWindow extends JFrame
 {

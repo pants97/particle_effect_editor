@@ -1,28 +1,26 @@
-package  particleEditor.effect
-{
+package  particleEditor.effect {
+	import a3dparticle.ParticlesContainer;
 	import a3dparticle.animators.actions.ActionBase;
-	import a3dparticle.particle.ParticleParam;
-	import a3dparticle.ParticlesContainer;
-	import flash.display.DisplayObject;
-	import flash.utils.Dictionary;
-	import org.aswing.BorderLayout;
-	import org.aswing.JPanel;
 	import a3dparticle.generater.GeneraterBase;
-	import a3dparticle.ParticlesContainer;
+	import a3dparticle.particle.ParticleParam;
+
+	import particleEditor.edit.IExportable;
+	import particleEditor.effect.action.ActionsFactory;
+	import particleEditor.effect.generater.GeneraterFactory;
+	import particleEditor.effect.param.InitParamFactory;
+
 	import org.aswing.ASColor;
 	import org.aswing.AsWingConstants;
-	import org.aswing.border.EmptyBorder;
-	import org.aswing.border.LineBorder;
 	import org.aswing.BorderLayout;
 	import org.aswing.Insets;
 	import org.aswing.JPanel;
 	import org.aswing.JScrollPane;
 	import org.aswing.JSplitPane;
 	import org.aswing.JViewport;
-	import particleEditor.edit.IExportable;
-	import particleEditor.effect.action.ActionsFactory;
-	import particleEditor.effect.generater.GeneraterFactory;
-	import particleEditor.effect.param.InitParamFactory;
+	import org.aswing.border.EmptyBorder;
+	import org.aswing.border.LineBorder;
+
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author liaocheng

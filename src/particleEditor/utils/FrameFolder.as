@@ -1,6 +1,4 @@
-package  particleEditor.utils
-{
-	import flash.events.Event;
+package  particleEditor.utils {
 	import org.aswing.ASColor;
 	import org.aswing.ASFont;
 	import org.aswing.AsWingConstants;
@@ -8,13 +6,15 @@ package  particleEditor.utils
 	import org.aswing.BorderLayout;
 	import org.aswing.Component;
 	import org.aswing.Container;
-	import org.aswing.event.PopupEvent;
-	import org.aswing.ext.Folder;
 	import org.aswing.JFrame;
 	import org.aswing.JPanel;
 	import org.aswing.JScrollPane;
 	import org.aswing.JToggleButton;
 	import org.aswing.JViewport;
+	import org.aswing.event.PopupEvent;
+	import org.aswing.ext.Folder;
+
+	import flash.events.Event;
 	/**
 	 * it is windowable folder
 	 * @author liaocheng

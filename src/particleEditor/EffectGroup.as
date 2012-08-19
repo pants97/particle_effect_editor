@@ -1,6 +1,6 @@
-package particleEditor
-{
+package particleEditor {
 	import a3dparticle.ParticlesContainer;
+
 	import away3d.bounds.AxisAlignedBoundingBox;
 	import away3d.bounds.BoundingVolumeBase;
 	import away3d.containers.ObjectContainer3D;

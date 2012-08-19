@@ -1,9 +1,9 @@
-package particleEditor.effect.action.local
-{
-	import a3dparticle.animators.actions.ActionBase;
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.bezier.BezierCurvelocal;
-	import org.aswing.VectorListModel;
+
 	import particleEditor.edit.EditorWithPropertyBase;
+
+	import org.aswing.VectorListModel;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -32,13 +32,16 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
+
+import particleEditor.edit.EditorWithPropertyBase;
 import particleEditor.inputer.VectorComboBox;
-import org.aswing.geom.IntDimension;
+
 import org.aswing.JSpacer;
 import org.aswing.VectorListModel;
-import particleEditor.edit.EditorWithPropertyBase;
+import org.aswing.geom.IntDimension;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class BezierParam extends EditorWithPropertyBase
 {

@@ -1,5 +1,4 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import org.aswing.AsWingConstants;
 	import org.aswing.FlowLayout;
 	import org.aswing.JComboBox;

@@ -1,7 +1,7 @@
 package {
-    import away3d.cameras.Camera3D;
+	import away3d.cameras.Camera3D;
+
 	import flash.display.DisplayObject;
-	import flash.display.Stage;
 	import flash.events.Event;
 	import flash.events.MouseEvent;
 	import flash.events.TransformGestureEvent;

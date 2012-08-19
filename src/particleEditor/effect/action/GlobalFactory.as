@@ -1,21 +1,22 @@
-package particleEditor.effect.action
-{
-	import flash.events.Event;
-	import org.aswing.event.AWEvent;
-	import org.aswing.event.ContainerEvent;
-	import org.aswing.JButton;
-	import org.aswing.JComboBox;
-	import org.aswing.JLabel;
-	import org.aswing.JPanel;
-	import org.aswing.SoftBoxLayout;
-	import org.aswing.util.Reflection;
-	import org.aswing.VectorListModel;
+package particleEditor.effect.action {
 	import particleEditor.edit.EditorBase;
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.EditorWithPropertyBase;
 	import particleEditor.edit.IExportable;
 	import particleEditor.edit.Property;
 	import particleEditor.effect.action.global.*;
+
+	import org.aswing.JButton;
+	import org.aswing.JComboBox;
+	import org.aswing.JLabel;
+	import org.aswing.JPanel;
+	import org.aswing.SoftBoxLayout;
+	import org.aswing.VectorListModel;
+	import org.aswing.event.AWEvent;
+	import org.aswing.event.ContainerEvent;
+	import org.aswing.util.Reflection;
+
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng

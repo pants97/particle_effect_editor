@@ -1,12 +1,12 @@
 package 
 {
+	import org.aswing.AsWingManager;
+
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.utils.setTimeout;
-	import org.aswing.ASColor;
-	import org.aswing.AsWingManager;
 	
 	/**
 	 * ...

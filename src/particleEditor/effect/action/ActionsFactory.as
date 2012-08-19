@@ -1,18 +1,18 @@
-package particleEditor.effect.action
-{
+package particleEditor.effect.action {
+	import particleEditor.edit.IExportable;
+	import particleEditor.edit.LocalActionProperty;
+	import particleEditor.edit.Property;
+	import particleEditor.utils.FrameFolder;
+
 	import org.aswing.ASColor;
-	import org.aswing.border.EmptyBorder;
-	import org.aswing.border.LineBorder;
 	import org.aswing.Container;
 	import org.aswing.Insets;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
 	import org.aswing.VectorListModel;
-	import particleEditor.edit.IExportable;
-	import particleEditor.edit.LocalActionProperty;
-	import particleEditor.edit.Property;
-	import particleEditor.utils.FrameFolder;
+	import org.aswing.border.EmptyBorder;
+	import org.aswing.border.LineBorder;
 	/**
 	 * ...
 	 * @author liaocheng

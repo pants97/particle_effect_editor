@@ -1,11 +1,11 @@
-package particleEditor.inputer
-{
-	import flash.geom.Vector3D;
+package particleEditor.inputer {
 	import org.aswing.AsWingConstants;
 	import org.aswing.FlowLayout;
 	import org.aswing.JAdjuster;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
+
+	import flash.geom.Vector3D;
 	/**
 	 * ...
 	 * @author liaocheng

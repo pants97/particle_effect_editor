@@ -1,17 +1,17 @@
-package particleEditor.effect.generater.material
-{
+package particleEditor.effect.generater.material {
 	import a3dparticle.particle.ParticleMaterialBase;
-	import flash.display.BlendMode;
-	import org.aswing.AsWingConstants;
-	import org.aswing.FlowLayout;
-	import org.aswing.SoftBoxLayout;
+
+	import particleEditor.edit.VarNameEditorBase;
 	import particleEditor.inputer.BooleanInput;
 	import particleEditor.inputer.ComboBoxInput;
-	import org.aswing.event.AWEvent;
-	import org.aswing.JPanel;
-	import particleEditor.edit.VarNameEditorBase;
 	import particleEditor.inputer.IntInput;
 	import particleEditor.inputer.NumberInput;
+
+	import org.aswing.JPanel;
+	import org.aswing.SoftBoxLayout;
+	import org.aswing.event.AWEvent;
+
+	import flash.display.BlendMode;
 	/**
 	 * ...
 	 * @author liaocheng

@@ -1,12 +1,11 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import org.aswing.AsWingConstants;
 	import org.aswing.FlowLayout;
-	import org.aswing.geom.IntDimension;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
 	import org.aswing.JSpacer;
 	import org.aswing.SoftBoxLayout;
+	import org.aswing.geom.IntDimension;
 	/**
 	 * ...
 	 * @author liaocheng

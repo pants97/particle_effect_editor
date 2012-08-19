@@ -1,7 +1,7 @@
-package particleEditor.effect.generater.material
-{
+package particleEditor.effect.generater.material {
 	import a3dparticle.particle.ParticleBitmapMaterial;
 	import a3dparticle.particle.ParticleMaterialBase;
+
 	import particleEditor.inputer.BooleanInput;
 	import particleEditor.inputer.FileImageInput;
 	import particleEditor.inputer.NumberInput;

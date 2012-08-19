@@ -1,5 +1,4 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import away3d.core.base.SubGeometry;
 	import away3d.entities.Mesh;
 	import away3d.events.AssetEvent;
@@ -7,13 +6,16 @@ package particleEditor.inputer
 	import away3d.loaders.Loader3D;
 	import away3d.loaders.misc.AssetLoaderContext;
 	import away3d.loaders.parsers.Max3DSParser;
-	import flash.events.Event;
-	import flash.net.FileFilter;
-	import flash.utils.ByteArray;
+
+	import particleEditor.utils.FileOperater;
+
 	import org.aswing.JButton;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
-	import particleEditor.utils.FileOperater;
+
+	import flash.events.Event;
+	import flash.net.FileFilter;
+	import flash.utils.ByteArray;
 	
 	/**
 	 * ...

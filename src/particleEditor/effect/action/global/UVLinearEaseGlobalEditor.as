@@ -1,6 +1,6 @@
-package particleEditor.effect.action.global
-{
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.uv.UVLinearEaseGlobal;
+
 	import particleEditor.effect.action.ActionEditorBase;
 	import particleEditor.inputer.NumberInput;
 	

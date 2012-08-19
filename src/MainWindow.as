@@ -1,14 +1,13 @@
-package
-{
-	import flash.display.DisplayObject;
-	import flash.events.Event;
-	import flash.net.FileFilter;
-	import flash.utils.ByteArray;
+package {
+	import particleEditor.EffectGroup;
+	import particleEditor.EffectGroupFactory;
+	import particleEditor.effect.EffectFactory;
+	import particleEditor.utils.FileOperater;
+
 	import org.aswing.ASColor;
-	import org.aswing.AssetPane;
 	import org.aswing.AsWingConstants;
+	import org.aswing.AssetPane;
 	import org.aswing.BorderLayout;
-	import org.aswing.event.ResizedEvent;
 	import org.aswing.FlowLayout;
 	import org.aswing.JButton;
 	import org.aswing.JOptionPane;
@@ -16,10 +15,12 @@ package
 	import org.aswing.JSplitPane;
 	import org.aswing.JWindow;
 	import org.aswing.SoftBoxLayout;
-	import particleEditor.effect.EffectFactory;
-	import particleEditor.EffectGroup;
-	import particleEditor.EffectGroupFactory;
-	import particleEditor.utils.FileOperater;
+	import org.aswing.event.ResizedEvent;
+
+	import flash.display.DisplayObject;
+	import flash.events.Event;
+	import flash.net.FileFilter;
+	import flash.utils.ByteArray;
 
 	/**
 	 * ...

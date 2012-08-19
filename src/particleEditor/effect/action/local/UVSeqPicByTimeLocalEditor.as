@@ -1,10 +1,11 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.uv.UVSeqPicByTimeLocal;
-	import org.aswing.VectorListModel;
+
 	import particleEditor.edit.EditorWithPropertyBase;
 	import particleEditor.inputer.BooleanInput;
 	import particleEditor.inputer.IntInput;
+
+	import org.aswing.VectorListModel;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -68,11 +69,14 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
-import org.aswing.VectorListModel;
+
 import particleEditor.edit.EditorWithPropertyBase;
 import particleEditor.inputer.ComboBoxInput;
+
+import org.aswing.VectorListModel;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class UVSeqPicByTimeParam extends EditorWithPropertyBase
 {

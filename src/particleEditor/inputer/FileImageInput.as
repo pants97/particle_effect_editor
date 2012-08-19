@@ -1,20 +1,23 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import away3d.materials.utils.DefaultMaterialManager;
+
+	import particleEditor.utils.FileOperater;
+
+	import org.aswing.AssetPane;
+	import org.aswing.JButton;
+	import org.aswing.JLabel;
+	import org.aswing.JPanel;
+	import org.aswing.geom.IntDimension;
+
+	import mx.utils.Base64Decoder;
+	import mx.utils.Base64Encoder;
+
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Loader;
 	import flash.events.Event;
 	import flash.net.FileFilter;
 	import flash.utils.ByteArray;
-	import mx.utils.Base64Decoder;
-	import mx.utils.Base64Encoder;
-	import org.aswing.AssetPane;
-	import org.aswing.geom.IntDimension;
-	import org.aswing.JButton;
-	import org.aswing.JLabel;
-	import org.aswing.JPanel;
-	import particleEditor.utils.FileOperater;
 	/**
 	 * ...
 	 * @author liaocheng

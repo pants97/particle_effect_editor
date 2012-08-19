@@ -1,12 +1,13 @@
-package particleEditor.effect.generater.material
-{
+package particleEditor.effect.generater.material {
 	import a3dparticle.particle.ParticleColorMaterial;
 	import a3dparticle.particle.ParticleMaterialBase;
+
 	import particleEditor.inputer.LabelInput;
+
 	import org.aswing.ASColor;
-	import org.aswing.event.AWEvent;
 	import org.aswing.JButton;
 	import org.aswing.JColorChooser;
+	import org.aswing.event.AWEvent;
 	/**
 	 * ...
 	 * @author liaocheng

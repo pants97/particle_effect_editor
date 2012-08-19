@@ -1,17 +1,19 @@
-package
-{
+package {
 	import away3d.containers.View3D;
 	import away3d.debug.AwayStats;
 	import away3d.debug.WireframeAxesGrid;
-	import flash.display.Sprite;
-	import flash.events.Event;
+
+	import particleEditor.EffectGroup;
+
 	import org.aswing.ASColor;
 	import org.aswing.JButton;
 	import org.aswing.JCheckBox;
 	import org.aswing.JColorChooser;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
-	import particleEditor.EffectGroup;
+
+	import flash.display.Sprite;
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng

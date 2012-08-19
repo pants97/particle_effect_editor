@@ -1,7 +1,4 @@
-package
-{
-	import flash.events.Event;
-	import flash.system.System;
+package {
 	import org.aswing.AsWingConstants;
 	import org.aswing.AsWingUtils;
 	import org.aswing.BorderLayout;
@@ -11,6 +8,9 @@ package
 	import org.aswing.JPanel;
 	import org.aswing.JScrollPane;
 	import org.aswing.JTextArea;
+
+	import flash.events.Event;
+	import flash.system.System;
 	
 	/**
 	 * ...

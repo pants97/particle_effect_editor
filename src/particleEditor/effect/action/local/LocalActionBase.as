@@ -1,13 +1,13 @@
-package particleEditor.effect.action.local
-{
-	import org.aswing.Container;
-	import org.aswing.event.AWEvent;
-	import org.aswing.VectorListModel;
+package particleEditor.effect.action.local {
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.EditorWithPropertyBase;
 	import particleEditor.edit.LocalActionProperty;
 	import particleEditor.edit.Property;
 	import particleEditor.effect.action.ActionEditorBase;
+
+	import org.aswing.Container;
+	import org.aswing.VectorListModel;
+	import org.aswing.event.AWEvent;
 	/**
 	 * ...
 	 * @author liaocheng

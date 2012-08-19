@@ -1,9 +1,9 @@
-package particleEditor.effect.action.local
-{
-	import a3dparticle.animators.actions.ActionBase;
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.rotation.RandomRotateLocal;
-	import org.aswing.VectorListModel;
+
 	import particleEditor.edit.EditorWithPropertyBase;
+
+	import org.aswing.VectorListModel;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -32,12 +32,15 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
-import org.aswing.VectorListModel;
+
 import particleEditor.edit.EditorWithPropertyBase;
 import particleEditor.inputer.ComboBoxInput;
 import particleEditor.inputer.VectorComboBox;
+
+import org.aswing.VectorListModel;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class RotateParam extends EditorWithPropertyBase
 {

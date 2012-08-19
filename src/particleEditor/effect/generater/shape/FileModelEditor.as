@@ -1,9 +1,9 @@
-package particleEditor.effect.generater.shape
-{
+package particleEditor.effect.generater.shape {
 	import away3d.core.base.SubGeometry;
+
+	import particleEditor.edit.VarNameEditorBase;
 	import particleEditor.inputer.FileModelInput;
 	import particleEditor.inputer.NumberInput;
-	import particleEditor.edit.VarNameEditorBase;
 	/**
 	 * ...
 	 * @author liaocheng

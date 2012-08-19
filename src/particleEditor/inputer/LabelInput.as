@@ -1,17 +1,13 @@
-package particleEditor.inputer
-{
-	
+package particleEditor.inputer {
 	import org.aswing.AsWingConstants;
 	import org.aswing.FlowLayout;
-	import org.aswing.JPanel;
-	import org.aswing.LayoutManager;
-	import org.aswing.BorderLayout;
 	import org.aswing.JLabel;
+	import org.aswing.JPanel;
 	import org.aswing.JTextField;
-	import org.aswing.Border;
-	import org.aswing.border.EmptyBorder;
-	import flash.events.Event;
 	import org.aswing.event.AWEvent;
+
+	import flash.events.Event;
+	
 	
 	/**
 	 * Dispatched when the user input ENTER in the textfield.

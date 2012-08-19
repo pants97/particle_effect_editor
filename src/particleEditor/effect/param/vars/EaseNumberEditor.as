@@ -1,13 +1,15 @@
-package particleEditor.effect.param.vars
-{
+package particleEditor.effect.param.vars {
 	import a3dparticle.particle.ParticleParam;
-	import flash.utils.Dictionary;
+
 	import particleEditor.easing.EaseChart;
 	import particleEditor.easing.EaseDefinition;
-	import flash.events.Event;
 	import particleEditor.inputer.ComboBoxInput;
 	import particleEditor.inputer.NumberInput;
+
 	import org.aswing.JButton;
+
+	import flash.events.Event;
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author liaocheng

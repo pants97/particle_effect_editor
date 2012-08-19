@@ -1,10 +1,11 @@
-package  particleEditor.effect
-{
+package  particleEditor.effect {
 	import a3dparticle.ParticlesContainer;
-	import flash.geom.Vector3D;
+
 	import particleEditor.edit.IImportable;
 	import particleEditor.inputer.Vector3dInputS;
 	import particleEditor.inputer.VectorDegreeInputS;
+
+	import flash.geom.Vector3D;
 	/**
 	 * ...
 	 * @author liaocheng

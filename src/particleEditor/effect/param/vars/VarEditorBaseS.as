@@ -1,5 +1,4 @@
-package particleEditor.effect.param.vars
-{
+package particleEditor.effect.param.vars {
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.edit.Property;
 	/**

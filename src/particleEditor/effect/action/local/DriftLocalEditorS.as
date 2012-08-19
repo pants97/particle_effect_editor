@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.drift.DriftLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
@@ -28,11 +28,13 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
 import particleEditor.inputer.VectorComboBoxS;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class DriftParamS extends EditorWithPropertyBaseS
 {

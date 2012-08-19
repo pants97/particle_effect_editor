@@ -1,5 +1,4 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.edit.LocalActionProperty;
 	import particleEditor.edit.Property;

@@ -1,6 +1,4 @@
-package particleEditor.effect.action
-{
-	import a3dparticle.animators.actions.ActionBase;
+package particleEditor.effect.action {
 	import particleEditor.edit.VarNameEditorBase;
 	/**
 	 * ...

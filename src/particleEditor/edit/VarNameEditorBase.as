@@ -1,12 +1,14 @@
 package particleEditor.edit 
 {
-	import flash.events.Event;
-	import org.aswing.event.AWEvent;
+	import particleEditor.inputer.LabelInput;
+
 	import org.aswing.JButton;
 	import org.aswing.JCheckBox;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
-	import particleEditor.inputer.LabelInput;
+	import org.aswing.event.AWEvent;
+
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng

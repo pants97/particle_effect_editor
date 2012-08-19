@@ -1,9 +1,9 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.acceleration.AccelerateLocal;
-	import a3dparticle.animators.actions.ActionBase;
-	import org.aswing.VectorListModel;
+
 	import particleEditor.edit.EditorWithPropertyBase;
+
+	import org.aswing.VectorListModel;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -33,11 +33,14 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
+
+import particleEditor.edit.EditorWithPropertyBase;
+import particleEditor.inputer.VectorComboBox;
+
+import org.aswing.VectorListModel;
+
 import flash.geom.Vector3D;
 import flash.utils.Dictionary;
-import particleEditor.inputer.VectorComboBox;
-import org.aswing.VectorListModel;
-import particleEditor.edit.EditorWithPropertyBase;
 
 class AccelerateParam extends EditorWithPropertyBase
 {

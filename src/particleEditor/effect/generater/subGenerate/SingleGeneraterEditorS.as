@@ -2,9 +2,10 @@ package particleEditor.effect.generater.subGenerate
 {
 	import a3dparticle.generater.SingleGenerater;
 	import a3dparticle.particle.ParticleSample;
+
+	import particleEditor.edit.EditorBaseS;
 	import particleEditor.edit.Property;
 	import particleEditor.inputer.ComboBoxInputS;
-	import particleEditor.edit.EditorBaseS;
 	/**
 	 * ...
 	 * @author liaocheng

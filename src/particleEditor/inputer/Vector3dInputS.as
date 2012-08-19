@@ -1,5 +1,4 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import flash.geom.Vector3D;
 	/**
 	 * ...

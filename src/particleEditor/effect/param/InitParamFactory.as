@@ -1,15 +1,15 @@
-package  particleEditor.effect.param
-{
+package  particleEditor.effect.param {
+	import particleEditor.edit.IExportable;
+	import particleEditor.utils.FrameFolder;
+
 	import org.aswing.ASColor;
-	import org.aswing.border.EmptyBorder;
-	import org.aswing.border.LineBorder;
 	import org.aswing.Insets;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
 	import org.aswing.VectorListModel;
-	import particleEditor.edit.IExportable;
-	import particleEditor.utils.FrameFolder;
+	import org.aswing.border.EmptyBorder;
+	import org.aswing.border.LineBorder;
 	/**
 	 * ...
 	 * @author liaocheng

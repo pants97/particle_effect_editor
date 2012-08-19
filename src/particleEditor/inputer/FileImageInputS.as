@@ -1,13 +1,14 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import away3d.materials.utils.DefaultMaterialManager;
+
+	import mx.utils.Base64Decoder;
+
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Loader;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.utils.ByteArray;
-	import mx.utils.Base64Decoder;
 	/**
 	 * ...
 	 * @author liaocheng

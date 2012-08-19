@@ -1,5 +1,4 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import org.aswing.JCheckBox;
 	/**
 	 * ...

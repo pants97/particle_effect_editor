@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.uv.UVSeqPicByTimeLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
@@ -45,10 +45,12 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class UVSeqPicByTimeParamS extends EditorWithPropertyBaseS
 {

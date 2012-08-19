@@ -1,8 +1,7 @@
-package particleEditor.effect.param.vars
-{
+package particleEditor.effect.param.vars {
 	import a3dparticle.particle.ParticleParam;
+
 	import flash.utils.Dictionary;
-	import particleEditor.inputer.NumberInput;
 	/**
 	 * ...
 	 * @author liaocheng

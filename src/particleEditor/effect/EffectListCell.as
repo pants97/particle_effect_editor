@@ -1,14 +1,13 @@
-package particleEditor.effect
-{
-	
+package particleEditor.effect {
 	import org.aswing.Component;
-	import org.aswing.event.AWEvent;
 	import org.aswing.JCheckBox;
 	import org.aswing.JLabel;
 	import org.aswing.JList;
 	import org.aswing.JLoadPane;
 	import org.aswing.JPanel;
 	import org.aswing.ListCell;
+	import org.aswing.event.AWEvent;
+	
 	
 	
 	public class EffectListCell implements ListCell

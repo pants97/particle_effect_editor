@@ -1,9 +1,10 @@
-package particleEditor.effect.generater.material
-{
+package particleEditor.effect.generater.material {
 	import a3dparticle.particle.ParticleMaterialBase;
-	import flash.display.BlendMode;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.ComboBoxInputS;
+
+	import flash.display.BlendMode;
 	/**
 	 * ...
 	 * @author liaocheng

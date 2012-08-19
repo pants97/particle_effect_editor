@@ -1,14 +1,15 @@
-package  particleEditor.effect
-{
+package  particleEditor.effect {
+	import a3dparticle.ParticlesContainer;
 	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.generater.GeneraterBase;
 	import a3dparticle.particle.ParticleParam;
-	import a3dparticle.ParticlesContainer;
-	import flash.utils.Dictionary;
+
 	import particleEditor.edit.IImportable;
 	import particleEditor.effect.action.ActionsFactoryS;
 	import particleEditor.effect.generater.GeneraterFactoryS;
 	import particleEditor.effect.param.InitParamFactoryS;
+
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author liaocheng

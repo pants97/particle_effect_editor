@@ -1,11 +1,11 @@
-package particleEditor.effect.action.global
-{
-	import a3dparticle.animators.actions.ActionBase;
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.bezier.BezierCurvelGlobal;
+
 	import particleEditor.effect.action.ActionEditorBase;
-	import org.aswing.geom.IntDimension;
-	import org.aswing.JSpacer;
 	import particleEditor.inputer.Vector3dInput;
+
+	import org.aswing.JSpacer;
+	import org.aswing.geom.IntDimension;
 	
 	/**
 	 * ...

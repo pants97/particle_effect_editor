@@ -1,6 +1,6 @@
-package  particleEditor.effect.generater
-{
+package  particleEditor.effect.generater {
 	import a3dparticle.generater.GeneraterBase;
+
 	import particleEditor.edit.EditorBaseS;
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.IImportable;

@@ -1,14 +1,12 @@
-package particleEditor.effect.param
-{
+package particleEditor.effect.param {
 	import a3dparticle.particle.ParticleParam;
-	import flash.utils.Dictionary;
-	import org.aswing.JComboBox;
-	import org.aswing.JLabel;
-	import org.aswing.JPanel;
-	import org.aswing.VectorListModel;
-	import particleEditor.edit.EditorBase;
+
 	import particleEditor.edit.EditorWithPropertyBase;
 	import particleEditor.inputer.ComboBoxInput;
+
+	import org.aswing.VectorListModel;
+
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author liaocheng

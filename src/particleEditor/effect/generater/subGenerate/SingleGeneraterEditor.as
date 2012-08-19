@@ -1,16 +1,16 @@
 package particleEditor.effect.generater.subGenerate 
 {
-	import a3dparticle.generater.GeneraterBase;
 	import a3dparticle.generater.SingleGenerater;
 	import a3dparticle.particle.ParticleSample;
+
+	import particleEditor.edit.EditorBase;
 	import particleEditor.edit.Property;
 	import particleEditor.inputer.ComboBoxInput;
 	import particleEditor.inputer.IntInput;
-	import org.aswing.JComboBox;
+
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
 	import org.aswing.VectorListModel;
-	import particleEditor.edit.EditorBase;
 	/**
 	 * ...
 	 * @author liaocheng

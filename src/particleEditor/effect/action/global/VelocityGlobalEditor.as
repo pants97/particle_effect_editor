@@ -1,7 +1,6 @@
-package particleEditor.effect.action.global
-{
-	import a3dparticle.animators.actions.ActionBase;
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.velocity.VelocityGlobal;
+
 	import particleEditor.effect.action.ActionEditorBase;
 	import particleEditor.inputer.Vector3dInput;
 	

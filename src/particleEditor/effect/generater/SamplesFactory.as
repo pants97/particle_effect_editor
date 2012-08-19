@@ -1,17 +1,19 @@
 package particleEditor.effect.generater 
 {
-	import flash.events.Event;
-	import org.aswing.border.LineBorder;
-	import org.aswing.event.AWEvent;
-	import org.aswing.event.ContainerEvent;
+	import particleEditor.edit.EditorBase;
+	import particleEditor.edit.IExportable;
+	import particleEditor.edit.Property;
+
 	import org.aswing.JButton;
 	import org.aswing.JLabel;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
 	import org.aswing.VectorListModel;
-	import particleEditor.edit.EditorBase;
-	import particleEditor.edit.IExportable;
-	import particleEditor.edit.Property;
+	import org.aswing.border.LineBorder;
+	import org.aswing.event.AWEvent;
+	import org.aswing.event.ContainerEvent;
+
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -100,14 +102,14 @@ package particleEditor.effect.generater
 }
 import a3dparticle.particle.ParticleMaterialBase;
 import a3dparticle.particle.ParticleSample;
+
 import away3d.core.base.SubGeometry;
+
 import particleEditor.edit.Property;
 import particleEditor.edit.VarNameEditorBase;
-import org.aswing.JComboBox;
-import org.aswing.JLabel;
-import org.aswing.JPanel;
-import org.aswing.VectorListModel;
 import particleEditor.inputer.ComboBoxInput;
+
+import org.aswing.VectorListModel;
 
 class SampleEdior extends VarNameEditorBase
 {

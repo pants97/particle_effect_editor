@@ -1,7 +1,6 @@
-package particleEditor.effect.action.global
-{
-	import a3dparticle.animators.actions.ActionBase;
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.scale.ScaleByLifeGlobal;
+
 	import particleEditor.effect.action.ActionEditorBase;
 	import particleEditor.inputer.NumberInput;
 	

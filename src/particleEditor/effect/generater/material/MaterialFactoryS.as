@@ -1,5 +1,4 @@
-package particleEditor.effect.generater.material
-{
+package particleEditor.effect.generater.material {
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.edit.IImportable;

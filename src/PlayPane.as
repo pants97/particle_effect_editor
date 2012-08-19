@@ -1,21 +1,23 @@
 package  
 {
-	import flash.events.Event;
-	import flash.utils.getTimer;
+	import particleEditor.EffectGroup;
+	import particleEditor.inputer.IntInput;
+
 	import org.aswing.ASColor;
 	import org.aswing.AsWingConstants;
-	import org.aswing.border.EmptyBorder;
-	import org.aswing.border.LineBorder;
-	import org.aswing.event.AWEvent;
-	import org.aswing.event.InteractiveEvent;
 	import org.aswing.FlowLayout;
 	import org.aswing.Insets;
 	import org.aswing.JPanel;
 	import org.aswing.JScrollBar;
 	import org.aswing.JToggleButton;
 	import org.aswing.SoftBoxLayout;
-	import particleEditor.EffectGroup;
-	import particleEditor.inputer.IntInput;
+	import org.aswing.border.EmptyBorder;
+	import org.aswing.border.LineBorder;
+	import org.aswing.event.AWEvent;
+	import org.aswing.event.InteractiveEvent;
+
+	import flash.events.Event;
+	import flash.utils.getTimer;
 	/**
 	 * ...
 	 * @author liaocheng

@@ -1,9 +1,8 @@
-package particleEditor.effect.generater.shape
-{
-	import away3d.core.base.SubGeometry;
+package particleEditor.effect.generater.shape {
 	import away3d.primitives.CubeGeometry;
-	import particleEditor.inputer.NumberInput;
+
 	import particleEditor.edit.VarNameEditorBase;
+	import particleEditor.inputer.NumberInput;
 	
 	/**
 	 * ...

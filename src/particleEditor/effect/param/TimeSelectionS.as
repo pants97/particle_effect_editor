@@ -1,9 +1,10 @@
-package particleEditor.effect.param
-{
+package particleEditor.effect.param {
 	import a3dparticle.particle.ParticleParam;
-	import flash.utils.Dictionary;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.ComboBoxInputS;
+
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author liaocheng

@@ -1,18 +1,20 @@
-package  particleEditor.effect
-{
+package  particleEditor.effect {
 	import a3dparticle.ParticlesContainer;
-	import flash.events.Event;
-	import flash.geom.Vector3D;
+
+	import particleEditor.edit.IExportable;
 	import particleEditor.inputer.BooleanInput;
 	import particleEditor.inputer.Vector3dInput;
 	import particleEditor.inputer.VectorDegreeInput;
+
 	import org.aswing.ASColor;
-	import org.aswing.border.EmptyBorder;
-	import org.aswing.border.LineBorder;
 	import org.aswing.Insets;
 	import org.aswing.JPanel;
 	import org.aswing.SoftBoxLayout;
-	import particleEditor.edit.IExportable;
+	import org.aswing.border.EmptyBorder;
+	import org.aswing.border.LineBorder;
+
+	import flash.events.Event;
+	import flash.geom.Vector3D;
 	/**
 	 * ...
 	 * @author liaocheng

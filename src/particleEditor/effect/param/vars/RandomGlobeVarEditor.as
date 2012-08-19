@@ -1,10 +1,11 @@
-package particleEditor.effect.param.vars
-{
+package particleEditor.effect.param.vars {
 	import a3dparticle.particle.ParticleParam;
-	import flash.geom.Vector3D;
-	import flash.utils.Dictionary;
+
 	import particleEditor.inputer.NumberInput;
 	import particleEditor.inputer.Vector3dInput;
+
+	import flash.geom.Vector3D;
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author liaocheng

@@ -1,9 +1,7 @@
-package particleEditor.easing
-{
-	import org.aswing.AssetPane;
+package particleEditor.easing {
 	import org.aswing.AsWingConstants;
 	import org.aswing.AsWingUtils;
-	import org.aswing.border.LineBorder;
+	import org.aswing.AssetPane;
 	import org.aswing.BorderLayout;
 	import org.aswing.JFrame;
 	/**
