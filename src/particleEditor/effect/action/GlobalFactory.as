@@ -75,7 +75,8 @@ package particleEditor.effect.action
 			var definition:EditorDefinition = comboBox.getSelectedItem() as EditorDefinition;
 			if (definition)
 			{
-				var _editor:ActionEditorBase = new definition.editorClass;
+				var editorClass:Class = definition.editorClass;
+				var _editor:ActionEditorBase = new editorClass();
 				_editor.setDefinition(definition);
 				_editor.setListModel(_actionsModel);
 				_editor.setPane(content);

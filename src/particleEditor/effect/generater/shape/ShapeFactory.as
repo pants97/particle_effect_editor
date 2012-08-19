@@ -101,7 +101,8 @@ package particleEditor.effect.generater.shape
 			var definition:EditorDefinition = comboBox.getSelectedItem() as EditorDefinition;
 			if (definition)
 			{
-				var _editor:EditorWithPropertyBase = new definition.editorClass;
+				var editorClass:Class = definition.editorClass;
+				var _editor:EditorWithPropertyBase = new editorClass();
 				_editor.setDefinition(definition);
 				_editor.setListModel(_shapesModel);
 				_editor.setPane(content);

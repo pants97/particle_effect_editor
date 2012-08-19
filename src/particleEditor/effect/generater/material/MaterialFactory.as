@@ -102,7 +102,8 @@ package particleEditor.effect.generater.material
 			var definition:EditorDefinition = comboBox.getSelectedItem() as EditorDefinition;
 			if (definition)
 			{
-				var _editor:EditorWithPropertyBase = new definition.editorClass;
+				var editorClass:Class = definition.editorClass;
+				var _editor:EditorWithPropertyBase = new editorClass();
 				_editor.setDefinition(definition);
 				_editor.setListModel(_materialsModel);
 				_editor.setPane(content);

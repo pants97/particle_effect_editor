@@ -100,7 +100,8 @@ package  particleEditor.effect.generater
 			if (definition)
 			{
 				if (_editorPane)_editorPane.dispose();
-				_editorPane = new definition.editorClass(_samplesFactory.createNeedStuff() as VectorListModel);
+				var editorClass:Class = definition.editorClass;
+				_editorPane = new editorClass(_samplesFactory.createNeedStuff() as VectorListModel);
 				_editorPane.setPane(_content);
 				doLayout();
 			}
