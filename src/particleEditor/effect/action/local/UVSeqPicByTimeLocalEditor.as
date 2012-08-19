@@ -91,9 +91,9 @@ class UVSeqPicByTimeParam extends EditorWithPropertyBase
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{
-			var cycle:Number = cycle.getValue()?localVars[cycle.getValue()]:10;
-			var startTime:Number = startTime.getValue()?localVars[startTime.getValue()]:0;
-			param["UVSeqPicByTimeLocal"] = new Vector3D(cycle, startTime);
+			var cycleValue:Number = cycle.getValue()?localVars[cycle.getValue()]:10;
+			var startTimeValue:Number = startTime.getValue()?localVars[startTime.getValue()]:0;
+			param["UVSeqPicByTimeLocal"] = new Vector3D(cycleValue, startTimeValue);
 		}
 	}
 	
