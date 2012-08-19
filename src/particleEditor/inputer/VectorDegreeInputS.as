@@ -1,34 +1,33 @@
-package particleEditor.inputer {
+package particleEditor.inputer
+{
 	import flash.geom.Vector3D;
+
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
 	public class VectorDegreeInputS implements IDeserializable
 	{
-		private var adjuster1:Number;
-		private var adjuster2:Number;
-		private var adjuster3:Number;
-		
-		public function VectorDegreeInputS() 
+		private var adjusterValues:Vector3D;
+
+		public function VectorDegreeInputS()
 		{
-			adjuster1 = 0;
-			adjuster2 = 0;
-			adjuster3 = 0;
+			adjusterValues = new Vector3D();
 		}
+
 		public function deserialize(value:String):void
 		{
 			var array:Array = value.split(",");
-			adjuster1 = Number(array[0]);
-			adjuster2 = Number(array[1]);
-			adjuster3 = Number(array[2]);
+			adjusterValues.x = Number(array[0]);
+			adjusterValues.y = Number(array[1]);
+			adjusterValues.z = Number(array[2]);
 		}
-		
+
 		public function getValue():Vector3D
 		{
-			return new Vector3D(adjuster1, adjuster2, adjuster3);
+			return adjusterValues;
 		}
-		
+
 	}
 
 }

@@ -1,7 +1,5 @@
 package particleEditor.effect.generater
 {
-	import a3dparticle.generater.GeneraterBase;
-
 	import particleEditor.edit.EditorBaseS;
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.IImportable;
@@ -48,7 +46,7 @@ package particleEditor.effect.generater
 		
 		public function createNeedStuff():*
 		{
-			return _editorPane.createNeedStuff() as GeneraterBase;
+			return _editorPane.createNeedStuff();
 		}
 	}
 

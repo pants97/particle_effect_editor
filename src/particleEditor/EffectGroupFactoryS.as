@@ -39,11 +39,14 @@ package particleEditor {
 		{
 			if (!_rawData)
 				throw(new Error("please import a valid data first"));
+
+			var len:uint = _particleGeneraters.length;
+			var _particleContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>(len, true);
 			
-			var _particleContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>;
-			for each(var i:EffectFactoryS in _particleGeneraters)
+			for (var i:uint = 0; i < len; ++i)
 			{
-				_particleContainers.push(i.createNeedStuff() as ParticlesContainer);
+				var particleGenerator:EffectFactoryS = _particleGeneraters[i];
+				_particleContainers[i] = particleGenerator.createNeedStuff() as ParticlesContainer;
 			}
 			return new EffectGroup(_rawData, _particleContainers);
 		}
