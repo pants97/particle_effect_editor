@@ -11,9 +11,6 @@ package particleEditor.effect.generater.material
 	public class MaterialFactoryS implements IImportable
 	{
 		
-		private static const materialEditors:Array = [new EditorDefinition("color material", ColorMaterialEditorS),new EditorDefinition("bitmap material",BitmapMaterialEditorS)];
-		
-		
 		private var _materialsModel:Array = new Array();
 		
 		

@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.color.RandomColorLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
@@ -39,10 +39,12 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.ColorTransform;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
+
+import flash.geom.ColorTransform;
+import flash.utils.Dictionary;
 
 class ColorParamS extends EditorWithPropertyBaseS
 {
@@ -81,7 +83,7 @@ class ColorParamS extends EditorWithPropertyBaseS
 			var blueOffset:Number = blueOffsetComboBox.getValue()?localVars[blueOffsetComboBox.getValue()]:0;
 			var alphaOffset:Number = alphaOffsetComboBox.getValue()?localVars[alphaOffsetComboBox.getValue()]:0;
 			param["RandomColorLocal"] = new ColorTransform(redMultiplier, greeMultiplier, blueMultiplier, alphaMultiplier, redOffset, greenOffset, blueOffset, alphaOffset);
-		}
+		};
 	}
 	
 	override public function importCode(xml:XML):void

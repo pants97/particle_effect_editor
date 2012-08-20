@@ -1,6 +1,6 @@
-package particleEditor.effect.action.global
-{
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.rotation.AutoRotateGlobal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...

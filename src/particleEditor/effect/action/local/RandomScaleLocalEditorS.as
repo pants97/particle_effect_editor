@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.scale.RandomScaleLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
@@ -29,10 +29,12 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.VectorComboBoxS;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class ScaleParamS extends EditorWithPropertyBaseS
 {
@@ -53,7 +55,7 @@ class ScaleParamS extends EditorWithPropertyBaseS
 			var y:Number = array[1]?localVars[array[1]]:0;
 			var z:Number = array[2]?localVars[array[2]]:0;
 			param["RandomScaleLocal"] = new Vector3D(x, y, z);
-		}
+		};
 	}
 	
 	override public function importCode(xml:XML):void

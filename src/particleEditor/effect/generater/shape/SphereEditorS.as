@@ -1,6 +1,6 @@
-package particleEditor.effect.generater.shape
-{
+package particleEditor.effect.generater.shape {
 	import away3d.primitives.SphereGeometry;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**

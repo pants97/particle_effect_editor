@@ -1,5 +1,4 @@
-package particleEditor.effect.generater.material
-{
+package particleEditor.effect.generater.material {
 	import a3dparticle.particle.ParticleColorMaterial;
 	import a3dparticle.particle.ParticleMaterialBase;
 	/**

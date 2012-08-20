@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.uv.UVSeqPicByTimeLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
@@ -45,10 +45,12 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class UVSeqPicByTimeParamS extends EditorWithPropertyBaseS
 {
@@ -66,10 +68,10 @@ class UVSeqPicByTimeParamS extends EditorWithPropertyBaseS
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{
-			var cycle:Number = cycle.getValue()?localVars[cycle.getValue()]:10;
-			var startTime:Number = startTime.getValue()?localVars[startTime.getValue()]:0;
-			param["UVSeqPicByTimeLocal"] = new Vector3D(cycle, startTime);
-		}
+			var cycleValue:Number = cycle.getValue()?localVars[cycle.getValue()]:10;
+			var startTimeValue:Number = startTime.getValue()?localVars[startTime.getValue()]:0;
+			param["UVSeqPicByTimeLocal"] = new Vector3D(cycleValue, startTimeValue);
+		};
 	}
 	
 	override public function importCode(xml:XML):void

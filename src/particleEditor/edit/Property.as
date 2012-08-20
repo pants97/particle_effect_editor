@@ -1,5 +1,4 @@
-package  particleEditor.edit
-{
+package  particleEditor.edit {
 	import flash.display.DisplayObjectContainer;
 	/**
 	 * ...

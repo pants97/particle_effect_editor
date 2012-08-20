@@ -1,9 +1,10 @@
-package particleEditor.effect.generater.material
-{
+package particleEditor.effect.generater.material {
 	import a3dparticle.particle.ParticleBitmapMaterial;
 	import a3dparticle.particle.ParticleMaterialBase;
-	import flash.events.Event;
+
 	import particleEditor.inputer.FileImageInputS;
+
+	import flash.events.Event;
 	/**
 	 * ...
 	 * @author liaocheng

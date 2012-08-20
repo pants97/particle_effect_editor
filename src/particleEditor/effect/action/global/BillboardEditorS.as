@@ -1,8 +1,7 @@
-package particleEditor.effect.action.global
-{
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.rotation.BillboardGlobal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
-	import particleEditor.effect.action.ActionEditorBase;
 	/**
 	 * ...
 	 * @author liaocheng

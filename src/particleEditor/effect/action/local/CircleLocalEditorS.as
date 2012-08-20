@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.circle.CircleLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.VectorDegreeInputS;
 	/**
@@ -37,10 +37,12 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class CircleParamS extends EditorWithPropertyBaseS
 {
@@ -60,7 +62,7 @@ class CircleParamS extends EditorWithPropertyBaseS
 			var radius:Number = radiusComboBox.getValue()?localVars[radiusComboBox.getValue()]:10;
 			var cycle:Number = cycleComboBox.getValue()?localVars[cycleComboBox.getValue()]:10;
 			param["CircleLocal"] = new Vector3D(radius, cycle);
-		}
+		};
 	}
 	
 	override public function importCode(xml:XML):void

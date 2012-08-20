@@ -10,9 +10,6 @@ package particleEditor.effect.generater.shape
 	public class ShapeFactoryS implements IImportable
 	{
 		
-		private static const shapeEditors:Array = [ new EditorDefinition("shpere", SphereEditorS) , new EditorDefinition("plane", PlaneEditorS) , 
-													new EditorDefinition("cube", CubeEditorS), new EditorDefinition("external model", FileModelEditorS)];
-		
 		private var _shapesModel:Array = new Array();
 		
 		

@@ -1,6 +1,6 @@
-package particleEditor.effect.action.local
-{
+package particleEditor.effect.action.local {
 	import a3dparticle.animators.actions.drift.DriftLocal;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
@@ -28,11 +28,13 @@ package particleEditor.effect.action.local
 }
 
 import a3dparticle.particle.ParticleParam;
-import flash.geom.Vector3D;
-import flash.utils.Dictionary;
+
 import particleEditor.edit.EditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
 import particleEditor.inputer.VectorComboBoxS;
+
+import flash.geom.Vector3D;
+import flash.utils.Dictionary;
 
 class DriftParamS extends EditorWithPropertyBaseS
 {
@@ -55,7 +57,7 @@ class DriftParamS extends EditorWithPropertyBaseS
 			var z:Number = array[2]?localVars[array[2]]:0;
 			var cycle:Number = cycleComboBox.getValue()?localVars[cycleComboBox.getValue()]:10;
 			param["DriftLocal"] = new Vector3D(x, y, z, cycle);
-		}
+		};
 	}
 	
 	override public function importCode(xml:XML):void

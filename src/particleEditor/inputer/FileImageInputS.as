@@ -1,13 +1,14 @@
-package particleEditor.inputer
-{
+package particleEditor.inputer {
 	import away3d.materials.utils.DefaultMaterialManager;
+
+	import mx.utils.Base64Decoder;
+
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;
 	import flash.display.Loader;
 	import flash.events.Event;
 	import flash.events.EventDispatcher;
 	import flash.utils.ByteArray;
-	import mx.utils.Base64Decoder;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -46,7 +47,6 @@ package particleEditor.inputer
 		
 		private function onLoader(e:Event):void
 		{
-			var bitmap:Bitmap = Bitmap(e.target.content);
 			bitmapData = Bitmap(e.target.content).bitmapData;
 			dispatchEvent(new Event(Event.COMPLETE));
 		}
@@ -61,7 +61,7 @@ package particleEditor.inputer
 			else
 			{
 				var decode:Base64Decoder = new Base64Decoder();
-				decode.decode(value)
+				decode.decode(value);
 				onRead(decode.toByteArray());
 			}
 		}

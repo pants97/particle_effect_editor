@@ -1,10 +1,14 @@
 package particleEditor
 {
 	import a3dparticle.ParticlesContainer;
+
 	import away3d.bounds.AxisAlignedBoundingBox;
 	import away3d.bounds.BoundingVolumeBase;
 	import away3d.containers.ObjectContainer3D;
 	import away3d.core.base.Object3D;
+
+	import flash.geom.Vector3D;
+
 	/**
 	 * ...
 	 * @author liaocheng
@@ -16,107 +20,135 @@ package particleEditor
 		private var _hasStart:Boolean;
 		private var _rawData:*;
 		private var _bounds:BoundingVolumeBase;
-		private var _showBounds : Boolean;
-		private var _boundsIsShown : Boolean = false;
-		
-		public function EffectGroup(rawData:*,particleContainers:Vector.<ParticlesContainer>)
+		private var _showBounds:Boolean;
+		private var _boundsIsShown:Boolean = false;
+
+		public function EffectGroup(rawData:*, particleContainers:Vector.<ParticlesContainer>)
 		{
 			this._rawData = rawData;
 			_bounds = new AxisAlignedBoundingBox();
 			_particleContainers = particleContainers;
-			for (var i:int = 0; i < _particleContainers.length; i++)
+			var len:uint = _particleContainers.length;
+			for (var i:uint = 0; i < len; ++i)
 			{
-				_particleContainers[i].time = time;
-				addChild(_particleContainers[i]);
-				checkBorder(_particleContainers[i]);
+				var particleContainer:ParticlesContainer = _particleContainers[i];
+				particleContainer.time = time;
+				addChild(particleContainer);
+				checkBorder(particleContainer);
 			}
 		}
-		
 
-		override public function set mouseEnabled(value : Boolean) : void
+
+		override public function set mouseEnabled(value:Boolean):void
 		{
 			super.mouseEnabled = value;
-			for (var i:int = 0; i < _particleContainers.length; i++)
+			
+			var len:uint = _particleContainers.length;
+			for (var i:uint = 0; i < len; ++i)
 			{
 				_particleContainers[i].mouseEnabled = value;
 			}
 		}
-		
+
 		public function bounds():BoundingVolumeBase
 		{
 			return _bounds;
 		}
-		
+
 		public function get rawData():XML
 		{
 			return _rawData;
 		}
-		
+
 		public function hasStart():Boolean
 		{
 			return _hasStart;
 		}
-		
+
 		public function isEmpty():Boolean
 		{
 			return _particleContainers.length == 0;
 		}
-		
+
 		private function checkBorder(particleContainer:ParticlesContainer):void
 		{
-			var _minX:Number = particleContainer.bounds.min.x * particleContainer.scaleX + particleContainer.x;
-			var _minY:Number = particleContainer.bounds.min.y * particleContainer.scaleY + particleContainer.y;
-			var _minZ:Number = particleContainer.bounds.min.z * particleContainer.scaleZ + particleContainer.z;
-			var _maxX:Number = particleContainer.bounds.max.x * particleContainer.scaleX + particleContainer.x;
-			var _maxY:Number = particleContainer.bounds.max.x * particleContainer.scaleY + particleContainer.y;
-			var _maxZ:Number = particleContainer.bounds.max.x * particleContainer.scaleZ + particleContainer.z;
-			if (_bounds.min.x > _minX || _bounds.min.y > _minY || _bounds.min.z > _minZ ||
-				_bounds.max.x < _maxX || _bounds.max.y < _maxY || _bounds.max.z < _maxZ)
-			_bounds.fromExtremes(_minX, _minY, _minZ, _maxX, _maxY, _maxZ);
+			var x:Number = particleContainer.x;
+			var y:Number = particleContainer.y;
+			var z:Number = particleContainer.z;
+
+			var scaleX:Number = particleContainer.scaleX;
+			var scaleY:Number = particleContainer.scaleY;
+			var scaleZ:Number = particleContainer.scaleZ;
+
+			var bounds:BoundingVolumeBase = particleContainer.bounds;
+			var min:Vector3D = bounds.min;
+			var max:Vector3D = bounds.max;
+
+			var _minX:Number = min.x * + x;
+			var _minY:Number = min.y * scaleY + y;
+			var _minZ:Number = min.z * scaleZ + z;
+
+			var _maxX:Number = max.x * scaleX + x;
+			var _maxY:Number = max.x * scaleY + y;
+			var _maxZ:Number = max.x * scaleZ + z;
+
+			min = _bounds.min;
+			max = _bounds.max;
+			if (min.x > _minX || min.y > _minY || z > _minZ || max.x < _maxX || max.y < _maxY || max.z < _maxZ)
+				_bounds.fromExtremes(_minX, _minY, _minZ, _maxX, _maxY, _maxZ);
 		}
-		
+
 		public function start():void
 		{
 			_hasStart = true;
-			_particleContainers.forEach(function(particleContainer:ParticlesContainer,...rest):void
+
+			var len:uint = _particleContainers.length;
+			for (var i:uint = 0; i < len; ++i)
 			{
+				var particleContainer:ParticlesContainer = _particleContainers[i];
 				particleContainer.start();
-			});
+			}
 		}
-		
+
 		public function stop():void
 		{
 			_hasStart = false;
-			_particleContainers.forEach(function(particleContainer:ParticlesContainer,...rest):void
+
+			var len:uint = _particleContainers.length;
+			for (var i:uint = 0; i < len; ++i)
 			{
+				var particleContainer:ParticlesContainer = _particleContainers[i];
 				particleContainer.stop();
-			});
+			}
 		}
-		
+
 		public function set time(value:Number):void
 		{
 			_time = value;
-			_particleContainers.forEach(function(particleContainer:ParticlesContainer,...rest):void
+
+			var len:uint = _particleContainers.length;
+			for (var i:uint = 0; i < len; ++i)
 			{
+				var particleContainer:ParticlesContainer = _particleContainers[i];
 				particleContainer.time = _time;
-			});
+			}
 		}
-		
+
 		public function get time():Number
 		{
 			if (isEmpty()) return _time;
 			else return _particleContainers[0].time;
 		}
-		
+
 		override public function clone():Object3D
 		{
-			var len : uint = _particleContainers.length;
-			var _clonedContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>;
+			var len:uint = _particleContainers.length;
+			var _clonedContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>(len, true);
 			for (var i:int = 0; i < len; i++)
 			{
-				_clonedContainers.push(_particleContainers[i].clone() as ParticlesContainer);
+				_clonedContainers[i] = _particleContainers[i].clone() as ParticlesContainer;
 			}
-			var clone : EffectGroup = new EffectGroup(_rawData,_clonedContainers);
+			var clone:EffectGroup = new EffectGroup(_rawData, _clonedContainers);
 			clone.time = time;
 			clone.pivotPoint = pivotPoint;
 			clone.transform = transform;
@@ -124,25 +156,25 @@ package particleEditor
 			clone.name = name;
 			return clone;
 		}
-		
-		public function get showBounds() : Boolean
+
+		public function get showBounds():Boolean
 		{
 			return _showBounds;
 		}
 
-		public function set showBounds(value : Boolean) : void
+		public function set showBounds(value:Boolean):void
 		{
 			if (value == _showBounds)
 				return;
-			
+
 			_showBounds = value;
-			
+
 			if (_showBounds)
 				addBounds();
 			else
 				removeBounds();
 		}
-		
+
 		private function addBounds():void
 		{
 			if (!_boundsIsShown)
@@ -151,6 +183,7 @@ package particleEditor
 				addChild(_bounds.boundingRenderable);
 			}
 		}
+
 		private function removeBounds():void
 		{
 			if (_boundsIsShown)
@@ -160,7 +193,7 @@ package particleEditor
 				_bounds.disposeRenderable();
 			}
 		}
-		
+
 	}
 
 }

@@ -1,6 +1,6 @@
-package particleEditor.effect.generater.shape
-{
+package particleEditor.effect.generater.shape {
 	import away3d.core.base.SubGeometry;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.FileModelInputS;
 	/**

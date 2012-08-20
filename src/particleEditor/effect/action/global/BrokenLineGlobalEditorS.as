@@ -1,8 +1,9 @@
-package particleEditor.effect.action.global
-{
+package particleEditor.effect.action.global {
 	import a3dparticle.animators.actions.brokenline.BrokenLineGlobal;
-	import flash.geom.Vector3D;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
+
+	import flash.geom.Vector3D;
 	
 	/**
 	 * ...

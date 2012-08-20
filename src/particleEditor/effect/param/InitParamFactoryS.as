@@ -1,5 +1,4 @@
-package  particleEditor.effect.param
-{
+package  particleEditor.effect.param {
 	import particleEditor.edit.IImportable;
 	/**
 	 * ...

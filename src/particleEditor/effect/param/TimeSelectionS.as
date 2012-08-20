@@ -1,9 +1,10 @@
-package particleEditor.effect.param
-{
+package particleEditor.effect.param {
 	import a3dparticle.particle.ParticleParam;
-	import flash.utils.Dictionary;
+
 	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.ComboBoxInputS;
+
+	import flash.utils.Dictionary;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -25,12 +26,11 @@ package particleEditor.effect.param
 		{
 			return function(_param:ParticleParam, localVars:Dictionary):void
 			{
-				var afsdf:*= startTimeComboBox.getValue();
 				var startTime:Number = startTimeComboBox.getValue()?localVars[startTimeComboBox.getValue()]:0;
 				var duringTime:Number = duringTimeComboBox.getValue()?localVars[duringTimeComboBox.getValue()]:1000;
 				_param.startTime = startTime;
 				_param.duringTime = duringTime;
-			}
+			};
 		}
 		
 		override public function importCode(xml:XML):void
