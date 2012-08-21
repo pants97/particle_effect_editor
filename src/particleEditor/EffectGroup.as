@@ -1,5 +1,6 @@
 package particleEditor
 {
+	import away3d.core.managers.Stage3DProxy;
 	import a3dparticle.ParticlesContainer;
 
 	import away3d.bounds.AxisAlignedBoundingBox;
@@ -37,7 +38,6 @@ package particleEditor
 				checkBorder(particleContainer);
 			}
 		}
-
 
 		override public function set mouseEnabled(value:Boolean):void
 		{
@@ -191,6 +191,14 @@ package particleEditor
 				_boundsIsShown = false;
 				removeChild(_bounds.boundingRenderable);
 				_bounds.disposeRenderable();
+			}
+		}
+
+		public function jumpStart(stage3DProxy:Stage3DProxy):void {
+			var len:uint = _particleContainers.length;
+			for (var i:uint = 0; i < len; ++i)
+			{
+				_particleContainers[i].jumpStart(stage3DProxy);
 			}
 		}
 
