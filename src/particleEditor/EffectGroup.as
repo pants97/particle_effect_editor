@@ -1,6 +1,4 @@
-package particleEditor
-{
-	import away3d.core.managers.Stage3DProxy;
+package particleEditor {
 	import a3dparticle.ParticlesContainer;
 
 	import away3d.bounds.AxisAlignedBoundingBox;
@@ -8,13 +6,20 @@ package particleEditor
 	import away3d.containers.ObjectContainer3D;
 	import away3d.core.base.Object3D;
 
+	import com.pro3games.particle.jumpStart.JumpStartNode;
+	import com.pro3games.particle.jumpStart.JumpStartTraverser;
+
 	import flash.geom.Vector3D;
+
+
+
+
 
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class EffectGroup extends ObjectContainer3D
+	public class EffectGroup extends ObjectContainer3D implements JumpStartNode
 	{
 		private var _time:Number = 0;
 		private var _particleContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>;
@@ -194,11 +199,12 @@ package particleEditor
 			}
 		}
 
-		public function jumpStart(stage3DProxy:Stage3DProxy):void {
+		public function acceptTraverser(jumpStartTraverser:JumpStartTraverser):void
+		{
 			var len:uint = _particleContainers.length;
 			for (var i:uint = 0; i < len; ++i)
 			{
-				_particleContainers[i].jumpStart(stage3DProxy);
+				_particleContainers[i].acceptTraverser(jumpStartTraverser);
 			}
 		}
 
