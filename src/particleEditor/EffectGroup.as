@@ -18,7 +18,7 @@ package particleEditor {
 	public class EffectGroup extends ObjectContainer3D implements JumpStartNode
 	{
 		private var _time:Number = 0;
-		private var _particleContainers:Vector.<ParticlesContainer> = new Vector.<ParticlesContainer>;
+		private var _particleContainers:Vector.<ParticlesContainer>;
 		private var _hasStart:Boolean;
 		private var _rawData:*;
 		private var _bounds:BoundingVolumeBase;
@@ -202,6 +202,11 @@ package particleEditor {
 			{
 				_particleContainers[i].acceptTraverser(jumpStartTraverser);
 			}
+		}
+		
+		public function get particleContainers():Vector.<ParticlesContainer>
+		{
+			return _particleContainers;
 		}
 
 	}
