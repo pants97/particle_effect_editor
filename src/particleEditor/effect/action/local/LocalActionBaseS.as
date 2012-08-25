@@ -17,15 +17,15 @@ package particleEditor.effect.action.local
 
 		public function LocalActionBaseS(_varListModel:Array)
 		{
-			super();
 			varListModel = _varListModel;
 			paramPane = createParamPane();
-			(_property as LocalActionProperty).setInitParamHandler(paramPane.createNeedStuff);
+			
+			super();
 		}
 
 		override protected function createActionProperty():ActionProperty
 		{
-			return new LocalActionProperty();
+			return new LocalActionProperty(paramPane);
 		}
 
 		protected function createParamPane():FunctionEditorWithPropertyBaseS

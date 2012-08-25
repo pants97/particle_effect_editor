@@ -1,5 +1,6 @@
 package particleEditor.effect.action
 {
+	import particleEditor.edit.LocalVarInitializer;
 	import a3dparticle.animators.actions.ActionBase;
 
 	import particleEditor.edit.ActionProperty;
@@ -14,7 +15,7 @@ package particleEditor.effect.action
 	{
 		private var _globalFactory:GlobalFactoryS;
 		private var _localFactory:LocalFactoryS;
-		private var _initHandlers:Vector.<Function>;
+		private var _initHandlers:Vector.<LocalVarInitializer>;
 
 		public function ActionsFactoryS(varListModel:Array)
 		{
@@ -51,17 +52,17 @@ package particleEditor.effect.action
 			return actions;
 		}
 
-		public function getInitParamHandlers():Vector.<Function>
+		public function getInitParamHandlers():Vector.<LocalVarInitializer>
 		{
 			if (!_initHandlers)
 			{
-				_initHandlers = new Vector.<Function>();
+				_initHandlers = new Vector.<LocalVarInitializer>();
 				var listModel:Vector.<ActionProperty> = _localFactory.actionProperties();
 				var len:uint = listModel.length;
 				for (var i:uint = 0; i < len; i++)
 				{
 					var actionProperty:LocalActionProperty = listModel[i] as LocalActionProperty;
-					_initHandlers.push(actionProperty.getNewInitHanlder());
+					_initHandlers.push(actionProperty.initializer);
 				}
 			}
 			return _initHandlers;

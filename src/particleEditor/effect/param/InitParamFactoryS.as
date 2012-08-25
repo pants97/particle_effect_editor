@@ -1,5 +1,6 @@
 package particleEditor.effect.param
 {
+	import particleEditor.edit.LocalVarInitializer;
 	import particleEditor.edit.IImportable;
 	/**
 	 * ...
@@ -24,14 +25,14 @@ package particleEditor.effect.param
 			return _localVarFactory.getVarListModel();
 		}
 				
-		public function createNeedStuff():Array
+		public function createNeedStuff():Vector.<LocalVarInitializer>
 		{
 			return _localVarFactory.createNeedStuff();
 		}
 		
-		public function getTimeHanlder():Function
+		public function getTimeHanlder():LocalVarInitializer
 		{
-			return timeSelectionPane.initializeLocalVars;
+			return timeSelectionPane;
 		}
 		
 		public function get tagName():String

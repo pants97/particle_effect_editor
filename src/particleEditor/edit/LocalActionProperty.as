@@ -6,21 +6,18 @@ package  particleEditor.edit
 	 */
 	public class LocalActionProperty extends ActionProperty
 	{
-		protected var _initParamHandler:Function;
+
+		private var _localVarInitializer:LocalVarInitializer;
 		
-		public function LocalActionProperty() 
+		public function LocalActionProperty(localVarInitializer:LocalVarInitializer) 
 		{
 			super();
+			_localVarInitializer = localVarInitializer;
 		}
-		
-		public function setInitParamHandler(value:Function):void
+
+		public function get initializer():LocalVarInitializer
 		{
-			_initParamHandler = value;
-		}
-		
-		public function getNewInitHanlder():Function
-		{
-			return _initParamHandler();
+			return _localVarInitializer;
 		}
 		
 	}

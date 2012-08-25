@@ -3,6 +3,7 @@ package particleEditor.effect.param
 	import particleEditor.edit.EditorDefinition;
 	import particleEditor.edit.FunctionProperty;
 	import particleEditor.edit.IImportable;
+	import particleEditor.edit.LocalVarInitializer;
 	import particleEditor.effect.param.vars.*;
 
 	/**
@@ -15,7 +16,7 @@ package particleEditor.effect.param
 		private var _varsModel:Array = new Array();
 
 		private var _funModel:Vector.<FunctionProperty>;
-		private var funModel:Array;
+		private var funModel:Vector.<LocalVarInitializer>;
 
 		public function LocalVarFactoryS()
 		{
@@ -27,15 +28,15 @@ package particleEditor.effect.param
 			return _varsModel;
 		}
 
-		public function createNeedStuff():Array
+		public function createNeedStuff():Vector.<LocalVarInitializer>
 		{
 			if (!funModel)
 			{
-				funModel = [];
 				var len:uint = _funModel.length;
+				funModel = new Vector.<LocalVarInitializer>(len, true);
 				for (var i:uint = 0; i < len; ++i)
 				{
-					funModel.push(_funModel[i].getNewValue());
+					funModel[i] = _funModel[i].initializer;
 				}
 			}
 			return funModel;

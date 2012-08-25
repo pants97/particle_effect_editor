@@ -5,14 +5,17 @@ package particleEditor.edit
 	public class FunctionProperty extends Property
 	{
 
-		public function FunctionProperty()
+		private var _localVarInitializer:LocalVarInitializer;
+
+		public function FunctionProperty(localVarInitializer:LocalVarInitializer)
 		{
 			super();
+			_localVarInitializer = localVarInitializer;
 		}
 		
-		public function getNewValue():Function
+		public function get initializer():LocalVarInitializer
 		{
-			return _handler();
+			return _localVarInitializer;
 		}
 	}
 }

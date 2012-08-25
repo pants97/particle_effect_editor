@@ -19,14 +19,7 @@ package particleEditor.edit
 
 		override protected function createProperty():Property
 		{
-			var property:Property = new FunctionProperty();
-			property.setCreateHandler(this.createNeedStuff);
-			return property;
-		}
-
-		public function createNeedStuff():Function
-		{
-			return initializeLocalVars;
+			return new FunctionProperty(this);
 		}
 
 		public function setListModel(listModel:Vector.<FunctionProperty>):void

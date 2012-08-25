@@ -1,5 +1,6 @@
 package particleEditor.effect
 {
+	import particleEditor.edit.LocalVarInitializer;
 	import a3dparticle.ParticlesContainer;
 	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.particle.ParticleParam;
@@ -63,30 +64,30 @@ package particleEditor.effect
 			_actionsFactory.importCode(xml[_actionsFactory.tagName][0]);
 		}
 
-
 		private function initParticleFun(param:ParticleParam):void
 		{
+			var initHandlers:Vector.<LocalVarInitializer>;
 			var len:uint;
 			var i:uint;
 
 			var localVars:Dictionary = new Dictionary;
 
-			var initHandlers:Array = _initParamFactory.createNeedStuff();
+			initHandlers = _initParamFactory.createNeedStuff();
 			len = initHandlers.length;
 			for (i = 0; i < len; ++i)
 			{
-				initHandlers[i](param, localVars);
+				initHandlers[i].initializeLocalVars(param, localVars);
 			}
 
 			// for an exception action -- TimeAction
-			_initParamFactory.getTimeHanlder()(param, localVars);
+			_initParamFactory.getTimeHanlder().initializeLocalVars(param, localVars);
 
 			// for normal actions
-			var actionInitHandlers:Vector.<Function> = _actionsFactory.getInitParamHandlers();
-			len = actionInitHandlers.length;
+			initHandlers = _actionsFactory.getInitParamHandlers();
+			len = initHandlers.length;
 			for (i = 0; i < len; ++i)
 			{
-				actionInitHandlers[i](param, localVars);
+				initHandlers[i].initializeLocalVars(param, localVars);
 			}
 		}
 
