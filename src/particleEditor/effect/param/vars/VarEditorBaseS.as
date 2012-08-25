@@ -1,11 +1,12 @@
-package particleEditor.effect.param.vars {
-	import particleEditor.edit.EditorWithPropertyBaseS;
+package particleEditor.effect.param.vars
+{
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	import particleEditor.edit.Property;
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class VarEditorBaseS extends EditorWithPropertyBaseS
+	public class VarEditorBaseS extends FunctionEditorWithPropertyBaseS
 	{
 		
 		protected var _varListModel:Array;

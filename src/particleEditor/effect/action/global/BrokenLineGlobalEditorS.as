@@ -1,7 +1,7 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.brokenline.BrokenLineGlobal;
-
-	import particleEditor.edit.EditorWithPropertyBaseS;
 
 	import flash.geom.Vector3D;
 	
@@ -9,7 +9,7 @@ package particleEditor.effect.action.global {
 	 * ...
 	 * @author liaocheng
 	 */
-	public class BrokenLineGlobalEditorS extends EditorWithPropertyBaseS
+	public class BrokenLineGlobalEditorS extends GlobalActionBaseS
 	{
 		private var segmentContainer:Array;
 		
@@ -18,7 +18,7 @@ package particleEditor.effect.action.global {
 			super();
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			var brokenData:Array = [];
 			var segmentPane:SegmentPaneS;

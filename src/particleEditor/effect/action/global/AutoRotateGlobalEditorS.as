@@ -1,12 +1,12 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.rotation.AutoRotateGlobal;
-
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class AutoRotateGlobalEditorS extends EditorWithPropertyBaseS
+	public class AutoRotateGlobalEditorS extends GlobalActionBaseS
 	{
 		
 		public function AutoRotateGlobalEditorS() 
@@ -14,7 +14,7 @@ package particleEditor.effect.action.global {
 			super();
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new AutoRotateGlobal();
 		}

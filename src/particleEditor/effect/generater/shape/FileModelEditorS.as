@@ -1,13 +1,14 @@
-package particleEditor.effect.generater.shape {
+package particleEditor.effect.generater.shape
+{
 	import away3d.core.base.SubGeometry;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.ShapeEditorWithPropertyBaseS;
 	import particleEditor.inputer.FileModelInputS;
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class FileModelEditorS extends EditorWithPropertyBaseS
+	public class FileModelEditorS extends ShapeEditorWithPropertyBaseS
 	{
 		
 		private var modelInput:FileModelInputS;
@@ -19,7 +20,7 @@ package particleEditor.effect.generater.shape {
 			scaleInput = 1;
 		}
 			
-		override public function createNeedStuff():*
+		override public function createNeedStuff():SubGeometry
 		{
 			var geometry:SubGeometry = modelInput.getValue();
 			geometry.scale(scaleInput);

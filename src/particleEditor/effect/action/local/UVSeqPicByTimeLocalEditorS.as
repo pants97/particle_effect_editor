@@ -1,7 +1,9 @@
-package particleEditor.effect.action.local {
+package particleEditor.effect.action.local
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.uv.UVSeqPicByTimeLocal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -20,12 +22,12 @@ package particleEditor.effect.action.local {
 			
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new UVSeqPicByTimeLocal(columns, rows, usingNum, hasStartTime, loop);
 		}
 		
-		override protected function createParamPane():EditorWithPropertyBaseS
+		override protected function createParamPane():FunctionEditorWithPropertyBaseS
 		{
 			return new UVSeqPicByTimeParamS(varListModel);
 		}
@@ -46,13 +48,13 @@ package particleEditor.effect.action.local {
 
 import a3dparticle.particle.ParticleParam;
 
-import particleEditor.edit.EditorWithPropertyBaseS;
+import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
 
 import flash.geom.Vector3D;
 import flash.utils.Dictionary;
 
-class UVSeqPicByTimeParamS extends EditorWithPropertyBaseS
+class UVSeqPicByTimeParamS extends FunctionEditorWithPropertyBaseS
 {
 	private var cycle:ComboBoxInputS;
 	private var startTime:ComboBoxInputS;
@@ -64,7 +66,7 @@ class UVSeqPicByTimeParamS extends EditorWithPropertyBaseS
 		startTime = new ComboBoxInputS(varListModel);
 	}
 	
-	override public function createNeedStuff():*
+	override public function createNeedStuff():Function
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{

@@ -17,7 +17,7 @@ package particleEditor.effect.param.vars {
 			addVarProperty("");
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():Function
 		{
 			return function(param:ParticleParam,localVars:Dictionary):void {
 				localVars[getVarProperty("")] = constInput;

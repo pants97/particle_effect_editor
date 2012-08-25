@@ -1,7 +1,9 @@
-package particleEditor.effect.action.local {
+package particleEditor.effect.action.local
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.color.RandomColorLocal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	/**
 	 * ...
 	 * @author Cheng Liao
@@ -17,12 +19,12 @@ package particleEditor.effect.action.local {
 		}
 		
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new RandomColorLocal(null,multiply,add);
 		}
 		
-		override protected function createParamPane():EditorWithPropertyBaseS
+		override protected function createParamPane():FunctionEditorWithPropertyBaseS
 		{
 			return new ColorParamS(varListModel);
 		}
@@ -40,13 +42,13 @@ package particleEditor.effect.action.local {
 
 import a3dparticle.particle.ParticleParam;
 
-import particleEditor.edit.EditorWithPropertyBaseS;
+import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
 
 import flash.geom.ColorTransform;
 import flash.utils.Dictionary;
 
-class ColorParamS extends EditorWithPropertyBaseS
+class ColorParamS extends FunctionEditorWithPropertyBaseS
 {
 
 	private var redMultiplierComboBox:ComboBoxInputS;
@@ -70,7 +72,7 @@ class ColorParamS extends EditorWithPropertyBaseS
 		alphaOffsetComboBox = new ComboBoxInputS(varListModel);
 	}
 	
-	override public function createNeedStuff():*
+	override public function createNeedStuff():Function
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{

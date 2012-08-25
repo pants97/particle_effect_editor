@@ -1,13 +1,13 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.scale.ScaleByTimeGlobal;
-
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class ScaleByTimeGlobalEditorS extends EditorWithPropertyBaseS
+	public class ScaleByTimeGlobalEditorS extends GlobalActionBaseS
 	{
 		private var minInput:Number;
 		private var maxInput:Number;
@@ -22,7 +22,7 @@ package particleEditor.effect.action.global {
 			cycleinput = 1;
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new ScaleByTimeGlobal(minInput, maxInput, cycleinput);
 		}

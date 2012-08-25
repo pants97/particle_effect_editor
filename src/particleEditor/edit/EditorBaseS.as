@@ -12,14 +12,8 @@ package particleEditor.edit
 			return "editor";
 		}
 		
-		public function createNeedStuff():*
-		{
-			return null;
-		}
-		
 		public function importCode(xml:XML):void
 		{
-			
 		}
 		
 	}

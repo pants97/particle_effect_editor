@@ -1,4 +1,4 @@
-package particleEditor.edit 
+package particleEditor.edit
 {
 	/**
 	 * ...
@@ -6,30 +6,21 @@ package particleEditor.edit
 	 */
 	public class EditorWithPropertyBaseS extends EditorBaseS
 	{
-		
+
 		protected var _property:Property;
-		protected var _listModel:Array;
-		
-		
 		protected var definition:EditorDefinition;
-		
-		public function EditorWithPropertyBaseS() 
+
+		public function EditorWithPropertyBaseS()
 		{
 			super();
 			_property = createProperty();
-			_property.setCreateHandler(this.createNeedStuff);
 		}
-		
+
 		protected function createProperty():Property
 		{
-			return new Property();
+			throw new Error("Abstract function 'createProperty' was not overridden by " + this + ".");
 		}
-		
-		public function setListModel(value:Array):void
-		{
-			_listModel = value;
-			_listModel.push(_property);
-		}
+
 	}
 
 }

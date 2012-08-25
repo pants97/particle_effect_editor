@@ -27,7 +27,7 @@ package  particleEditor.effect {
 		}
 		
 		
-		public function createNeedStuff ():*
+		public function createNeedStuff ():ParticlesContainer
 		{
 			var particlesContainer:ParticlesContainer = new ParticlesContainer();
 			particlesContainer.hasDuringTime = duringInput;

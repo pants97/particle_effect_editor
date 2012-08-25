@@ -1,7 +1,8 @@
-package particleEditor.effect.param {
+package particleEditor.effect.param
+{
 	import a3dparticle.particle.ParticleParam;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	import particleEditor.inputer.ComboBoxInputS;
 
 	import flash.utils.Dictionary;
@@ -9,7 +10,7 @@ package particleEditor.effect.param {
 	 * ...
 	 * @author liaocheng
 	 */
-	public class TimeSelectionS extends EditorWithPropertyBaseS
+	public class TimeSelectionS extends FunctionEditorWithPropertyBaseS
 	{
 		private var startTimeComboBox:ComboBoxInputS;
 		private var duringTimeComboBox:ComboBoxInputS;
@@ -22,7 +23,7 @@ package particleEditor.effect.param {
 			duringTimeComboBox = new ComboBoxInputS(varListModel);
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():Function
 		{
 			return function(_param:ParticleParam, localVars:Dictionary):void
 			{

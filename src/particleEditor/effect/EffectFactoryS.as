@@ -1,7 +1,7 @@
 package particleEditor.effect
 {
 	import a3dparticle.ParticlesContainer;
-	import a3dparticle.generater.GeneraterBase;
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.particle.ParticleParam;
 
 	import particleEditor.edit.IImportable;
@@ -40,10 +40,10 @@ package particleEditor.effect
 			return "effect";
 		}
 
-		public function createNeedStuff():*
+		public function createNeedStuff():ParticlesContainer
 		{
-			var particlesContainer:ParticlesContainer = _systemFactory.createNeedStuff() as ParticlesContainer;
-			var allActions:Array = _actionsFactory.createNeedStuff() as Array;
+			var particlesContainer:ParticlesContainer = _systemFactory.createNeedStuff();
+			var allActions:Vector.<ActionBase> = _actionsFactory.createNeedStuff();
 			var len:uint = allActions.length;
 			for (var i:uint = 0; i < len; ++i)
 			{
@@ -51,7 +51,7 @@ package particleEditor.effect
 			}
 
 			particlesContainer.initParticleFun = initParticleFun();
-			particlesContainer.generate(_generaterFactory.createNeedStuff() as GeneraterBase);
+			particlesContainer.generate(_generaterFactory.createNeedStuff());
 			return particlesContainer;
 		}
 
@@ -69,13 +69,12 @@ package particleEditor.effect
 
 			return function(param:ParticleParam):void
 			{
-				var initHandlers:Array;
 				var len:uint;
 				var i:uint;
 
 				var localVars:Dictionary = new Dictionary;
 
-				initHandlers = _initParamFactory.createNeedStuff() as Array;
+				var initHandlers:Array = _initParamFactory.createNeedStuff();
 				len = initHandlers.length;
 				for (i = 0; i < len; ++i)
 				{
@@ -86,11 +85,11 @@ package particleEditor.effect
 				_initParamFactory.getTimeHanlder()(param, localVars);
 
 				// for normal actions
-				initHandlers = _actionsFactory.getInitParamHandlers();
-				len = initHandlers.length;
+				var actionInitHandlers:Vector.<Function> = _actionsFactory.getInitParamHandlers();
+				len = actionInitHandlers.length;
 				for (i = 0; i < len; ++i)
 				{
-					initHandlers[i](param, localVars);
+					actionInitHandlers[i](param, localVars);
 				}
 			};
 		}

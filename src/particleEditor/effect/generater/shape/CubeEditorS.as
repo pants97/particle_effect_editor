@@ -1,13 +1,15 @@
-package particleEditor.effect.generater.shape {
+package particleEditor.effect.generater.shape
+{
+	import away3d.core.base.SubGeometry;
 	import away3d.primitives.CubeGeometry;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.ShapeEditorWithPropertyBaseS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class CubeEditorS extends EditorWithPropertyBaseS
+	public class CubeEditorS extends ShapeEditorWithPropertyBaseS
 	{
 		private var widthInput:Number;
 		private var heightInput:Number;
@@ -26,7 +28,7 @@ package particleEditor.effect.generater.shape {
 			depthInput=Number(xml.@depth);
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():SubGeometry
 		{
 			var cube:CubeGeometry = new CubeGeometry(widthInput, heightInput, depthInput);
 			return cube.subGeometries[0];

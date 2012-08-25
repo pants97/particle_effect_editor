@@ -7,22 +7,18 @@ package  particleEditor.edit {
 	public class Property 
 	{
 		public var name:String;
-		private var _handler:Function;
+		
+		protected var _handler:Function;
+		
 		private var _editorPane:DisplayObjectContainer;
 		
 		public function Property() 
 		{
-			 
 		}
 		
 		public function setCreateHandler(value:Function):void
 		{
 			_handler = value;
-		}
-		
-		public function getNewValue():*
-		{
-			return _handler();
 		}
 		
 		public function toString():String

@@ -1,14 +1,15 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.velocity.VelocityGlobal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.Vector3dInputS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class VelocityGlobalEditorS extends EditorWithPropertyBaseS
+	public class VelocityGlobalEditorS extends GlobalActionBaseS
 	{
 		private var valueInput:Vector3dInputS;
 		
@@ -19,7 +20,7 @@ package particleEditor.effect.action.global {
 			valueInput = new Vector3dInputS(0, 200, 0);
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new VelocityGlobal(valueInput.getValue());
 		}

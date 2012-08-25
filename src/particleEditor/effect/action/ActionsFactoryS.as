@@ -1,8 +1,10 @@
 package particleEditor.effect.action
 {
+	import a3dparticle.animators.actions.ActionBase;
+
+	import particleEditor.edit.ActionProperty;
 	import particleEditor.edit.IImportable;
 	import particleEditor.edit.LocalActionProperty;
-	import particleEditor.edit.Property;
 
 	/**
 	 * ...
@@ -12,6 +14,7 @@ package particleEditor.effect.action
 	{
 		private var _globalFactory:GlobalFactoryS;
 		private var _localFactory:LocalFactoryS;
+		private var _initHandlers:Vector.<Function>;
 
 		public function ActionsFactoryS(varListModel:Array)
 		{
@@ -20,44 +23,48 @@ package particleEditor.effect.action
 
 		}
 
-		public function createNeedStuff():*
+		public function createNeedStuff():Vector.<ActionBase>
 		{
-			var actions:Array = [];
+			var actions:Vector.<ActionBase> = new Vector.<ActionBase>();
+			
 			var len:uint;
 			var i:int;
-			var property:Property;
+			var property:ActionProperty;
 
-			var listModel:Array;
+			var listModel:Vector.<ActionProperty>;
 
-			listModel = _globalFactory.createNeedStuff() as Array;
+			listModel = _globalFactory.actionProperties();
 			len = listModel.length;
 			for (i = 0; i < len; i++)
 			{
-				property = listModel[i] as Property;
+				property = listModel[i];
 				actions.push(property.getNewValue());
 			}
 
-			listModel = _localFactory.createNeedStuff() as Array;
+			listModel = _localFactory.actionProperties();
 			len = listModel.length;
 			for (i = 0; i < len; i++)
 			{
-				property = listModel[i] as Property;
+				property = listModel[i];
 				actions.push(property.getNewValue());
 			}
 			return actions;
 		}
 
-		public function getInitParamHandlers():Array
+		public function getInitParamHandlers():Vector.<Function>
 		{
-			var initHandlers:Array = [];
-			var listModel:Array = _localFactory.createNeedStuff() as Array;
-			var len:uint = listModel.length;
-			for (var i:uint = 0; i < len; i++)
+			if (_initHandlers == null)
 			{
-				var actionProperty:LocalActionProperty = listModel[i] as LocalActionProperty;
-				initHandlers.push(actionProperty.getNewInitHanlder());
+				_initHandlers = new Vector.<Function>();
+				var listModel:Vector.<ActionProperty> = _localFactory.actionProperties();
+				var len:uint = listModel.length;
+				for (var i:uint = 0; i < len; i++)
+				{
+					var actionProperty:LocalActionProperty = listModel[i] as LocalActionProperty;
+					_initHandlers.push(actionProperty.getNewInitHanlder());
+				}
 			}
-			return initHandlers;
+			return _initHandlers;
 		}
 
 		public function get tagName():String

@@ -1,13 +1,13 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.scale.ScaleByLifeGlobal;
-
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class ScaleByLifeGlobalEditorS extends EditorWithPropertyBaseS
+	public class ScaleByLifeGlobalEditorS extends GlobalActionBaseS
 	{
 		private var startInput:Number;
 		private var endInput:Number;
@@ -19,7 +19,7 @@ package particleEditor.effect.action.global {
 			endInput = 2;
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new ScaleByLifeGlobal(startInput, endInput);
 		}

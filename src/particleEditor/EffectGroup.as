@@ -11,10 +11,6 @@ package particleEditor {
 
 	import flash.geom.Vector3D;
 
-
-
-
-
 	/**
 	 * ...
 	 * @author liaocheng

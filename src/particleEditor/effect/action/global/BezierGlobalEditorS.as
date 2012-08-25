@@ -1,14 +1,15 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.bezier.BezierCurvelGlobal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.Vector3dInputS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class BezierGlobalEditorS extends EditorWithPropertyBaseS
+	public class BezierGlobalEditorS extends GlobalActionBaseS
 	{
 		private var controlInput:Vector3dInputS;
 		private var endInput:Vector3dInputS;
@@ -22,7 +23,7 @@ package particleEditor.effect.action.global {
 			endInput = new Vector3dInputS(100, 0, 0);
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new BezierCurvelGlobal(controlInput.getValue(), endInput.getValue());
 		}

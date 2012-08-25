@@ -1,13 +1,15 @@
-package particleEditor.effect.generater.shape {
+package particleEditor.effect.generater.shape
+{
+	import away3d.core.base.SubGeometry;
 	import away3d.primitives.SphereGeometry;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.ShapeEditorWithPropertyBaseS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class SphereEditorS extends EditorWithPropertyBaseS
+	public class SphereEditorS extends ShapeEditorWithPropertyBaseS
 	{
 		private var radiusInput:Number;
 		private var segmentsWInput:int;
@@ -29,7 +31,7 @@ package particleEditor.effect.generater.shape {
 			segmentsHInput=int(xml.@segmentsH);
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():SubGeometry
 		{
 			var sphere:SphereGeometry = new SphereGeometry(radiusInput, segmentsWInput, segmentsHInput);
 			return sphere.subGeometries[0];

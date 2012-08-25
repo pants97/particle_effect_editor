@@ -1,79 +1,102 @@
-package particleEditor.effect.generater 
+package particleEditor.effect.generater
 {
 	import particleEditor.edit.IImportable;
+	import particleEditor.edit.MaterialProperty;
+	import particleEditor.edit.SampleProperty;
+	import particleEditor.edit.ShapeProperty;
+
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
 	public class SamplesFactoryS implements IImportable
 	{
-		
-		private var shapeModel:Array;
-		private var materialModel:Array;
-		
-		private var _sampleModel:Array = new Array();
-		
-		
-		public function SamplesFactoryS(shapeModel:Array,materialModel:Array) 
-		{		
-			this.shapeModel = shapeModel;
-			this.materialModel = materialModel;
+
+		private var _shapeModel:Vector.<ShapeProperty>;
+		private var _materialModel:Vector.<MaterialProperty>;
+
+		private var _sampleModel:Vector.<SampleProperty>;
+
+		public function SamplesFactoryS(shapeModel:Vector.<ShapeProperty>, materialModel:Vector.<MaterialProperty>)
+		{
+			_shapeModel = shapeModel;
+			_materialModel = materialModel;
+
+			_sampleModel = new Vector.<SampleProperty>();
 		}
-		
+
 		public function get tagName():String
 		{
 			return "sample";
 		}
-		
+
 		public function importCode(xml:XML):void
 		{
-			for each(var i:XML in xml.editor)
+			for each (var i:XML in xml.editor)
 			{
-				var _editor:SampleEdiorS = new SampleEdiorS(shapeModel,materialModel);
+				var _editor:SampleEdiorS = new SampleEdiorS(_shapeModel, _materialModel);
 				_editor.setListModel(_sampleModel);
 				_editor.importCode(i);
 			}
 		}
-		
-		public function createNeedStuff():*
+
+		public function sampleProperties():Vector.<SampleProperty>
 		{
 			return _sampleModel;
-		}		
+		}
+		
 	}
 
 }
 
 
 
-import a3dparticle.particle.ParticleMaterialBase;
 import a3dparticle.particle.ParticleSample;
 
-import away3d.core.base.SubGeometry;
-
 import particleEditor.edit.EditorWithPropertyBaseS;
+import particleEditor.edit.MaterialProperty;
 import particleEditor.edit.Property;
-import particleEditor.inputer.ComboBoxInputS;
+import particleEditor.edit.SampleProperty;
+import particleEditor.edit.ShapeProperty;
 
 class SampleEdiorS extends EditorWithPropertyBaseS
 {
-	private var materialCombo:ComboBoxInputS;
-	private var shapeCombo:ComboBoxInputS;
-	
-	
-	public function SampleEdiorS(shapeModel:Array,materialModel:Array)
+
+	private var _shapeModel:Vector.<ShapeProperty>;
+	private var _shapeIndex:int;
+
+	private var _materialModel:Vector.<MaterialProperty>;
+	private var _materialIndex:int;
+
+	private var _listModel:Vector.<SampleProperty>;
+
+	public function SampleEdiorS(shapeModel:Vector.<ShapeProperty>, materialModel:Vector.<MaterialProperty>)
 	{
 		super();
-		materialCombo = new ComboBoxInputS(materialModel);
-		shapeCombo = new ComboBoxInputS(shapeModel);
+		_shapeModel = shapeModel;
+		_materialModel = materialModel;
 	}
-	
-	override public function createNeedStuff():*
+
+	override protected function createProperty():Property
 	{
-		if (shapeCombo.getValue() && materialCombo.getValue())
+		var property:SampleProperty = new SampleProperty();
+		property.setCreateHandler(this.createNeedStuff);
+		return property;
+	}
+
+	public function createNeedStuff():ParticleSample
+	{
+		var shapeProperty:ShapeProperty;
+		if (_shapeIndex >= 0)
+			shapeProperty = _shapeModel[_shapeIndex];
+
+		var materialProperty:MaterialProperty;
+		if (_materialIndex >= 0)
+			materialProperty = _materialModel[_materialIndex];
+
+		if (shapeProperty && materialProperty)
 		{
-			var shape:SubGeometry = (shapeCombo.getValue() as Property).getNewValue() as SubGeometry;
-			var material:ParticleMaterialBase = (materialCombo.getValue() as Property).getNewValue() as ParticleMaterialBase;;
-			return new ParticleSample(shape, material);
+			return new ParticleSample(shapeProperty.getNewValue(), materialProperty.getNewValue());
 		}
 		else
 		{
@@ -81,11 +104,17 @@ class SampleEdiorS extends EditorWithPropertyBaseS
 			return null;
 		}
 	}
-	
+
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
-		materialCombo.deserialize(xml.@material);
-		shapeCombo.deserialize(xml.@shape);
+		_shapeIndex = int(xml.@shape);
+		_materialIndex = int(xml.@material);
+	}
+
+	public function setListModel(listModel:Vector.<SampleProperty>):void
+	{
+		_listModel = listModel;
+		_listModel.push(_property);
 	}
 }

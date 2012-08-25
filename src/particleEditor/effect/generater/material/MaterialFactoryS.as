@@ -1,7 +1,7 @@
 package particleEditor.effect.generater.material
 {
+	import particleEditor.edit.MaterialProperty;
 	import particleEditor.edit.EditorDefinition;
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.edit.IImportable;
 	
 	/**
@@ -11,11 +11,11 @@ package particleEditor.effect.generater.material
 	public class MaterialFactoryS implements IImportable
 	{
 		
-		private var _materialsModel:Array = new Array();
-		
+		private var _materialsModel:Vector.<MaterialProperty>;
 		
 		public function MaterialFactoryS()
 		{
+			_materialsModel = new Vector.<MaterialProperty>();
 		}
 		
 		public function get tagName():String
@@ -29,17 +29,16 @@ package particleEditor.effect.generater.material
 			for each (var i:XML in xml.editor)
 			{
 				var cls:Class = EditorDefinition.getClassByNameS(i.@clazz);
-				var _editor:EditorWithPropertyBaseS = new cls() as EditorWithPropertyBaseS;
+				var _editor:MaterialEditorBaseS = MaterialEditorBaseS(new cls());
 				_editor.setListModel(_materialsModel);
 				_editor.importCode(i);
 			}
 		}
 		
-		public function createNeedStuff():*
+		public function materialProperties():Vector.<MaterialProperty>
 		{
 			return _materialsModel;
 		}
-		
 	
 	}
 

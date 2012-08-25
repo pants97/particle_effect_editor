@@ -1,66 +1,74 @@
-package particleEditor.effect.generater.subGenerate 
+package particleEditor.effect.generater.subGenerate
 {
+	import a3dparticle.generater.GeneraterBase;
 	import a3dparticle.generater.MutiWeightGenerater;
 	import a3dparticle.particle.ParticleSample;
 
-	import particleEditor.edit.EditorBaseS;
-	import particleEditor.edit.Property;
+	import particleEditor.edit.SampleProperty;
+
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class WeightGeneraterEditorS extends EditorBaseS
+	public class WeightGeneraterEditorS extends GeneraterEditorBaseS
 	{
-		private var _sampleModel:Array;
-		private var weightSampleContainer:Array;
+
+		private var _sampleModel:Vector.<SampleProperty>;
+
+		private var weightSampleContainer:Vector.<WeightSampePaneS>;
 		private var countInput:int;
-		
-		public function WeightGeneraterEditorS(sampleModel:Array) 
+
+		public function WeightGeneraterEditorS(sampleModel:Vector.<SampleProperty>)
 		{
 			super();
 			_sampleModel = sampleModel;
-			weightSampleContainer = [];
+			weightSampleContainer = new Vector.<WeightSampePaneS>();
 		}
-		
-		
-		override public function createNeedStuff():*
+
+
+		override public function createNeedStuff():GeneraterBase
 		{
-			var samples:Array = [];
-			var weights:Array = [];
+			var samples:Vector.<ParticleSample> = new Vector.<ParticleSample>();
+			var weights:Vector.<int> = new Vector.<int>();
 			var pane:WeightSampePaneS;
 			for (var i:int = 0; i < weightSampleContainer.length; i++)
 			{
-				pane = weightSampleContainer[i] as WeightSampePaneS;
-				var sample:ParticleSample = (pane.sampleCombo.getValue() as Property).getNewValue() as ParticleSample;;
-				var weight:int = pane.weightInput;
-				samples.push(sample);
-				weights.push(weight);
+				pane = weightSampleContainer[i];
+				samples.push(pane.sampleProperty.getNewValue());
+				weights.push(pane.weightInput);
 			}
-			return new MutiWeightGenerater(samples,weights,countInput);
+			return new MutiWeightGenerater(samples, weights, countInput);
 		}
-		
+
 		override public function importCode(xml:XML):void
 		{
 			super.importCode(xml);
-			for each(var segment:XML in xml.weight_sample)
-			{			
-				var pane:WeightSampePaneS = new WeightSampePaneS(_sampleModel);
-				pane.sampleCombo.deserialize(segment.@sample);
+			for each (var segment:XML in xml.weight_sample)
+			{
+				var sampleProperty:SampleProperty;
+				var sampleIndex:int = int(segment.@sample);
+				if (sampleIndex >= 0)
+					sampleProperty = _sampleModel[sampleIndex];
+
+				var pane:WeightSampePaneS = new WeightSampePaneS(sampleProperty);
 				pane.weightInput = int(segment.@weight);
+
 				weightSampleContainer.push(pane);
 			}
 			countInput = int(xml.@count);
-		}	
+		}
 	}
 }
-import particleEditor.inputer.ComboBoxInputS;
+import particleEditor.edit.SampleProperty;
 
 class WeightSampePaneS
 {
+
 	public var weightInput:int;
-	public var sampleCombo:ComboBoxInputS;
-	public function WeightSampePaneS(sampleModel:Array)
+	public var sampleProperty:SampleProperty;
+
+	public function WeightSampePaneS(sampleProperty:SampleProperty)
 	{
-		sampleCombo = new ComboBoxInputS(sampleModel);
+		this.sampleProperty = sampleProperty;
 	}
 }

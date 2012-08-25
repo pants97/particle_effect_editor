@@ -1,4 +1,7 @@
-package particleEditor.effect.generater.material {
+package particleEditor.effect.generater.material
+{
+	import particleEditor.edit.MaterialProperty;
+	import particleEditor.edit.Property;
 	import a3dparticle.particle.ParticleMaterialBase;
 
 	import particleEditor.edit.EditorWithPropertyBaseS;
@@ -11,6 +14,8 @@ package particleEditor.effect.generater.material {
 	 */
 	public class MaterialEditorBaseS extends EditorWithPropertyBaseS
 	{
+		
+		private var _listModel:Vector.<MaterialProperty>;
 		
 		protected var bothSidesCheck:Boolean;
 		protected var requiresBlendingCheck:Boolean;
@@ -27,8 +32,15 @@ package particleEditor.effect.generater.material {
 			requiresBlendingCheck = true;
 			blendModeCombo = new ComboBoxInputS([BlendMode.NORMAL, BlendMode.MULTIPLY, BlendMode.ADD, BlendMode.ALPHA]);
 		}
+
+		override protected function createProperty():Property
+		{
+			var property:MaterialProperty = new MaterialProperty();
+			property.setCreateHandler(this.createNeedStuff);
+			return property;
+		}
 		
-		override public function createNeedStuff():*
+		public function createNeedStuff():ParticleMaterialBase
 		{
 			var material:ParticleMaterialBase = createMaterial();
 			setMaterialProperty(material);
@@ -67,6 +79,12 @@ package particleEditor.effect.generater.material {
 				timeInterval = Number(xml.@timeInterval);
 				fadeFactor = Number(xml.@fadeFactor);
 			}
+		}
+
+		public function setListModel(listModel:Vector.<MaterialProperty>):void
+		{
+			_listModel = listModel;
+			_listModel.push(_property);
 		}
 		
 	}

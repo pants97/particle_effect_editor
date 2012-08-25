@@ -1,7 +1,9 @@
-package particleEditor.effect.action.local {
+package particleEditor.effect.action.local
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.circle.CircleLocal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	import particleEditor.inputer.VectorDegreeInputS;
 	/**
 	 * ...
@@ -16,12 +18,12 @@ package particleEditor.effect.action.local {
 			eulersInput = new VectorDegreeInputS();
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new CircleLocal(null,eulersInput.getValue());
 		}
 		
-		override protected function createParamPane():EditorWithPropertyBaseS
+		override protected function createParamPane():FunctionEditorWithPropertyBaseS
 		{
 			return new CircleParamS(varListModel);
 		}
@@ -38,13 +40,13 @@ package particleEditor.effect.action.local {
 
 import a3dparticle.particle.ParticleParam;
 
-import particleEditor.edit.EditorWithPropertyBaseS;
+import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
 
 import flash.geom.Vector3D;
 import flash.utils.Dictionary;
 
-class CircleParamS extends EditorWithPropertyBaseS
+class CircleParamS extends FunctionEditorWithPropertyBaseS
 {
 	private var radiusComboBox:ComboBoxInputS;
 	private var cycleComboBox:ComboBoxInputS;
@@ -55,7 +57,7 @@ class CircleParamS extends EditorWithPropertyBaseS
 		cycleComboBox = new ComboBoxInputS(varListModel);
 	}
 	
-	override public function createNeedStuff():*
+	override public function createNeedStuff():Function
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{

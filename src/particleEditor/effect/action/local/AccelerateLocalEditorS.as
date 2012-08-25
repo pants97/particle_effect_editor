@@ -1,7 +1,9 @@
-package particleEditor.effect.action.local {
+package particleEditor.effect.action.local
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.acceleration.AccelerateLocal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -14,12 +16,12 @@ package particleEditor.effect.action.local {
 			super(_varListModel);
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new AccelerateLocal();
 		}
 		
-		override protected function createParamPane():EditorWithPropertyBaseS
+		override protected function createParamPane():FunctionEditorWithPropertyBaseS
 		{
 			return new AccelerateParamS(varListModel);
 		}
@@ -31,13 +33,13 @@ package particleEditor.effect.action.local {
 
 import a3dparticle.particle.ParticleParam;
 
-import particleEditor.edit.EditorWithPropertyBaseS;
+import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 import particleEditor.inputer.VectorComboBoxS;
 
 import flash.geom.Vector3D;
 import flash.utils.Dictionary;
 
-class AccelerateParamS extends EditorWithPropertyBaseS
+class AccelerateParamS extends FunctionEditorWithPropertyBaseS
 {
 	private var valueInput:VectorComboBoxS;
 
@@ -47,7 +49,7 @@ class AccelerateParamS extends EditorWithPropertyBaseS
 		valueInput = new VectorComboBoxS(varListModel);
 	}
 	
-	override public function createNeedStuff():*
+	override public function createNeedStuff():Function
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{

@@ -1,7 +1,9 @@
-package particleEditor.effect.action.local {
+package particleEditor.effect.action.local
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.rotation.RandomRotateLocal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	/**
 	 * ...
 	 * @author liaocheng
@@ -14,12 +16,12 @@ package particleEditor.effect.action.local {
 			super(_varListModel);
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new RandomRotateLocal();
 		}
 		
-		override protected function createParamPane():EditorWithPropertyBaseS
+		override protected function createParamPane():FunctionEditorWithPropertyBaseS
 		{
 			return new RotateParamS(varListModel);
 		}
@@ -30,14 +32,14 @@ package particleEditor.effect.action.local {
 
 import a3dparticle.particle.ParticleParam;
 
-import particleEditor.edit.EditorWithPropertyBaseS;
+import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 import particleEditor.inputer.ComboBoxInputS;
 import particleEditor.inputer.VectorComboBoxS;
 
 import flash.geom.Vector3D;
 import flash.utils.Dictionary;
 
-class RotateParamS extends EditorWithPropertyBaseS
+class RotateParamS extends FunctionEditorWithPropertyBaseS
 {
 	private var axisInput:VectorComboBoxS;
 	private var cycleComboBox:ComboBoxInputS;
@@ -49,7 +51,7 @@ class RotateParamS extends EditorWithPropertyBaseS
 		cycleComboBox = new ComboBoxInputS(varListModel);
 	}
 	
-	override public function createNeedStuff():*
+	override public function createNeedStuff():Function
 	{
 		return function(param:ParticleParam, localVars:Dictionary):void
 		{

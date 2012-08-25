@@ -1,14 +1,15 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.color.FlickerGlobal;
 
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	import particleEditor.inputer.ColorTransformInputS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class FlickerGlobalEditorS extends EditorWithPropertyBaseS
+	public class FlickerGlobalEditorS extends GlobalActionBaseS
 	{
 		private var minInput:ColorTransformInputS;
 		private var maxInput:ColorTransformInputS;
@@ -25,7 +26,7 @@ package particleEditor.effect.action.global {
 			phaseAngleInput = 0;
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new FlickerGlobal(minInput.getValue(),maxInput.getValue(),cycleInput,phaseAngleInput);
 		}

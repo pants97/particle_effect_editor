@@ -28,7 +28,7 @@ package particleEditor.effect.param.vars {
 		}
 		
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():Function
 		{
 			var start:Number = startInput;
 			var end:Number = endInput;

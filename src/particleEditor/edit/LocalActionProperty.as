@@ -4,13 +4,13 @@ package  particleEditor.edit
 	 * ...
 	 * @author liaocheng
 	 */
-	public class LocalActionProperty extends Property
+	public class LocalActionProperty extends ActionProperty
 	{
 		protected var _initParamHandler:Function;
 		
 		public function LocalActionProperty() 
 		{
-			
+			super();
 		}
 		
 		public function setInitParamHandler(value:Function):void
@@ -22,8 +22,6 @@ package  particleEditor.edit
 		{
 			return _initParamHandler();
 		}
-		
-		
 		
 	}
 

@@ -30,7 +30,7 @@ package particleEditor.effect.param.vars {
 			addVarProperty("z");
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():Function
 		{
 			var min:Number = innerRadius;
 			var max:Number = outerRadius;

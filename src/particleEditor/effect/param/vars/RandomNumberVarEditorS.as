@@ -20,7 +20,7 @@ package particleEditor.effect.param.vars {
 			addVarProperty("");
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():Function
 		{
 			var min:Number = minInput;
 			var max:Number = maxInput;

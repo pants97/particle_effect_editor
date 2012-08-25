@@ -1,44 +1,45 @@
-package particleEditor.effect.action.local {
-	import particleEditor.edit.EditorWithPropertyBaseS;
+package particleEditor.effect.action.local
+{
+	import particleEditor.edit.ActionEditorBaseS;
+	import particleEditor.edit.ActionProperty;
+	import particleEditor.edit.FunctionEditorWithPropertyBaseS;
 	import particleEditor.edit.LocalActionProperty;
-	import particleEditor.edit.Property;
+
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class LocalActionBaseS extends EditorWithPropertyBaseS
+	public class LocalActionBaseS extends ActionEditorBaseS
 	{
-		protected var paramPane:EditorWithPropertyBaseS;
+
+		protected var paramPane:FunctionEditorWithPropertyBaseS;
 		protected var varListModel:Array;
-		
-		public function LocalActionBaseS(_varListModel:Array) 
+
+		public function LocalActionBaseS(_varListModel:Array)
 		{
 			super();
 			varListModel = _varListModel;
-			paramPane = createParamPane();			
+			paramPane = createParamPane();
 			(_property as LocalActionProperty).setInitParamHandler(paramPane.createNeedStuff);
 		}
-		
-		
-		override protected function createProperty():Property
+
+		override protected function createActionProperty():ActionProperty
 		{
 			return new LocalActionProperty();
 		}
-		
-		
-		protected function createParamPane():EditorWithPropertyBaseS
+
+		protected function createParamPane():FunctionEditorWithPropertyBaseS
 		{
 			throw(new Error("abstract  method!"));
 			return null;
 		}
-		
-		
+
 		override public function importCode(xml:XML):void
 		{
 			super.importCode(xml);
 			paramPane.importCode(xml[paramPane.tagName][0]);
 		}
-		
+
 	}
 
 }

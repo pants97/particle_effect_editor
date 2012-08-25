@@ -23,7 +23,7 @@ package  particleEditor.effect.param {
 			return _localVarFactory.getVarListModel();
 		}
 				
-		public function createNeedStuff():*
+		public function createNeedStuff():Array
 		{
 			return _localVarFactory.createNeedStuff();
 		}

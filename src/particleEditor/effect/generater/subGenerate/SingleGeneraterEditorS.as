@@ -1,31 +1,33 @@
-package particleEditor.effect.generater.subGenerate 
+package particleEditor.effect.generater.subGenerate
 {
+	import a3dparticle.generater.GeneraterBase;
 	import a3dparticle.generater.SingleGenerater;
 	import a3dparticle.particle.ParticleSample;
 
-	import particleEditor.edit.EditorBaseS;
-	import particleEditor.edit.Property;
-	import particleEditor.inputer.ComboBoxInputS;
+	import particleEditor.edit.SampleProperty;
+
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class SingleGeneraterEditorS extends EditorBaseS
+	public class SingleGeneraterEditorS extends GeneraterEditorBaseS
 	{
-		private var comboBox:ComboBoxInputS;
+
 		private var countInput:int;
-		
-		public function SingleGeneraterEditorS(samples:Array) 
+		private var _sampleModel:Vector.<SampleProperty>;
+		private var _sampleIndex:int;
+
+		public function SingleGeneraterEditorS(sampleModel:Vector.<SampleProperty>)
 		{
-			comboBox = new ComboBoxInputS(samples);
+			_sampleModel = sampleModel;
 		}
-		
-		override public function createNeedStuff():*
+
+		override public function createNeedStuff():GeneraterBase
 		{
-			if (comboBox.getValue())
+			if (_sampleIndex >= 0)
 			{
-				var sample:ParticleSample = (comboBox.getValue() as Property).getNewValue() as ParticleSample;
-				return new SingleGenerater(sample,countInput);
+				var sample:ParticleSample = _sampleModel[_sampleIndex].getNewValue();
+				return new SingleGenerater(sample, countInput);
 			}
 			else
 			{
@@ -33,14 +35,14 @@ package particleEditor.effect.generater.subGenerate
 				return null;
 			}
 		}
-		
+
 		override public function importCode(xml:XML):void
 		{
 			super.importCode(xml);
-			comboBox.deserialize(xml.@sample);
+			_sampleIndex = int(xml.@sample);
 			countInput = int(xml.@count);
 		}
-		
+
 	}
 
 }

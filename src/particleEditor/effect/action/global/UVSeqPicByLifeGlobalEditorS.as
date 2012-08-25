@@ -1,13 +1,13 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.uv.UVSeqPicByLifeGlobal;
-
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class UVSeqPicByLifeGlobalEditorS extends EditorWithPropertyBaseS
+	public class UVSeqPicByLifeGlobalEditorS extends GlobalActionBaseS
 	{
 		private var columns:int;
 		private var rows:int;
@@ -18,7 +18,7 @@ package particleEditor.effect.action.global {
 			super();
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new UVSeqPicByLifeGlobal(columns, rows,usingNum);
 		}

@@ -1,13 +1,13 @@
-package particleEditor.effect.action.global {
+package particleEditor.effect.action.global
+{
+	import a3dparticle.animators.actions.ActionBase;
 	import a3dparticle.animators.actions.uv.UVDriftGlobal;
-
-	import particleEditor.edit.EditorWithPropertyBaseS;
 	
 	/**
 	 * ...
 	 * @author liaocheng
 	 */
-	public class UVDriftGlobalEditorS extends EditorWithPropertyBaseS
+	public class UVDriftGlobalEditorS extends GlobalActionBaseS
 	{
 		private var cycle:Number;
 		private var scale:Number;
@@ -17,7 +17,7 @@ package particleEditor.effect.action.global {
 			super();
 		}
 		
-		override public function createNeedStuff():*
+		override public function createNeedStuff():ActionBase
 		{
 			return new UVDriftGlobal(cycle, scale);
 		}

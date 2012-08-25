@@ -8,7 +8,6 @@ package particleEditor.edit
 	{
 		function get tagName():String;
 		function importCode(xml:XML):void;
-		function createNeedStuff():*;
 		
 	}
 
