@@ -72,22 +72,6 @@ class ColorParamS extends FunctionEditorWithPropertyBaseS
 		alphaOffsetComboBox = new ComboBoxInputS(varListModel);
 	}
 	
-	override public function createNeedStuff():Function
-	{
-		return function(param:ParticleParam, localVars:Dictionary):void
-		{
-			var redMultiplier:Number = redMultiplierComboBox.getValue()?localVars[redMultiplierComboBox.getValue()]:1;
-			var greeMultiplier:Number = greeMultiplierComboBox.getValue()?localVars[greeMultiplierComboBox.getValue()]:1;
-			var blueMultiplier:Number = blueMultiplierComboBox.getValue()?localVars[blueMultiplierComboBox.getValue()]:1;
-			var alphaMultiplier:Number = alphaMultiplierComboBox.getValue()?localVars[alphaMultiplierComboBox.getValue()]:1;
-			var redOffset:Number = redOffsetComboBox.getValue()?localVars[redOffsetComboBox.getValue()]:0;
-			var greenOffset:Number = greenOffsetComboBox.getValue()?localVars[greenOffsetComboBox.getValue()]:0;
-			var blueOffset:Number = blueOffsetComboBox.getValue()?localVars[blueOffsetComboBox.getValue()]:0;
-			var alphaOffset:Number = alphaOffsetComboBox.getValue()?localVars[alphaOffsetComboBox.getValue()]:0;
-			param["RandomColorLocal"] = new ColorTransform(redMultiplier, greeMultiplier, blueMultiplier, alphaMultiplier, redOffset, greenOffset, blueOffset, alphaOffset);
-		};
-	}
-	
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
@@ -99,5 +83,18 @@ class ColorParamS extends FunctionEditorWithPropertyBaseS
 		greenOffsetComboBox.deserialize(xml.@greenOffset);
 		blueOffsetComboBox.deserialize(xml.@blueOffset);
 		alphaOffsetComboBox.deserialize(xml.@alphaOffset);
+	}
+
+	override public function initializeLocalVars(param:ParticleParam, localVars:Dictionary):void
+	{
+		var redMultiplier:Number = redMultiplierComboBox.getValue()?localVars[redMultiplierComboBox.getValue()]:1;
+		var greeMultiplier:Number = greeMultiplierComboBox.getValue()?localVars[greeMultiplierComboBox.getValue()]:1;
+		var blueMultiplier:Number = blueMultiplierComboBox.getValue()?localVars[blueMultiplierComboBox.getValue()]:1;
+		var alphaMultiplier:Number = alphaMultiplierComboBox.getValue()?localVars[alphaMultiplierComboBox.getValue()]:1;
+		var redOffset:Number = redOffsetComboBox.getValue()?localVars[redOffsetComboBox.getValue()]:0;
+		var greenOffset:Number = greenOffsetComboBox.getValue()?localVars[greenOffsetComboBox.getValue()]:0;
+		var blueOffset:Number = blueOffsetComboBox.getValue()?localVars[blueOffsetComboBox.getValue()]:0;
+		var alphaOffset:Number = alphaOffsetComboBox.getValue()?localVars[alphaOffsetComboBox.getValue()]:0;
+		param["RandomColorLocal"] = new ColorTransform(redMultiplier, greeMultiplier, blueMultiplier, alphaMultiplier, redOffset, greenOffset, blueOffset, alphaOffset);
 	}
 }

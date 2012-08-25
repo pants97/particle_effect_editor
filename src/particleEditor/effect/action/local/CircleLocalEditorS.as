@@ -57,20 +57,17 @@ class CircleParamS extends FunctionEditorWithPropertyBaseS
 		cycleComboBox = new ComboBoxInputS(varListModel);
 	}
 	
-	override public function createNeedStuff():Function
-	{
-		return function(param:ParticleParam, localVars:Dictionary):void
-		{
-			var radius:Number = radiusComboBox.getValue()?localVars[radiusComboBox.getValue()]:10;
-			var cycle:Number = cycleComboBox.getValue()?localVars[cycleComboBox.getValue()]:10;
-			param["CircleLocal"] = new Vector3D(radius, cycle);
-		};
-	}
-	
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
 		radiusComboBox.deserialize(xml.@radius);
 		cycleComboBox.deserialize(xml.@cycle);
+	}
+
+	override public function initializeLocalVars(param:ParticleParam, localVars:Dictionary):void
+	{
+		var radius:Number = radiusComboBox.getValue()?localVars[radiusComboBox.getValue()]:10;
+		var cycle:Number = cycleComboBox.getValue()?localVars[cycleComboBox.getValue()]:10;
+		param["CircleLocal"] = new Vector3D(radius, cycle);
 	}
 }

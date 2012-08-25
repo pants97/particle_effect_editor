@@ -66,20 +66,17 @@ class UVSeqPicByTimeParamS extends FunctionEditorWithPropertyBaseS
 		startTime = new ComboBoxInputS(varListModel);
 	}
 	
-	override public function createNeedStuff():Function
-	{
-		return function(param:ParticleParam, localVars:Dictionary):void
-		{
-			var cycleValue:Number = cycle.getValue()?localVars[cycle.getValue()]:10;
-			var startTimeValue:Number = startTime.getValue()?localVars[startTime.getValue()]:0;
-			param["UVSeqPicByTimeLocal"] = new Vector3D(cycleValue, startTimeValue);
-		};
-	}
-	
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
 		cycle.deserialize(xml.@cycle);
 		startTime.deserialize(xml.@startTime);
+	}
+
+	override public function initializeLocalVars(param:ParticleParam, localVars:Dictionary):void
+	{
+		var cycleValue:Number = cycle.getValue()?localVars[cycle.getValue()]:10;
+		var startTimeValue:Number = startTime.getValue()?localVars[startTime.getValue()]:0;
+		param["UVSeqPicByTimeLocal"] = new Vector3D(cycleValue, startTimeValue);
 	}
 }

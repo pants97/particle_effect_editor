@@ -50,7 +50,7 @@ package particleEditor.effect
 				particlesContainer.addAction(allActions[i]);
 			}
 
-			particlesContainer.initParticleFun = initParticleFun();
+			particlesContainer.initParticleFun = initParticleFun;
 			particlesContainer.generate(_generaterFactory.createNeedStuff());
 			return particlesContainer;
 		}
@@ -64,34 +64,30 @@ package particleEditor.effect
 		}
 
 
-		private function initParticleFun():Function
+		private function initParticleFun(param:ParticleParam):void
 		{
+			var len:uint;
+			var i:uint;
 
-			return function(param:ParticleParam):void
+			var localVars:Dictionary = new Dictionary;
+
+			var initHandlers:Array = _initParamFactory.createNeedStuff();
+			len = initHandlers.length;
+			for (i = 0; i < len; ++i)
 			{
-				var len:uint;
-				var i:uint;
+				initHandlers[i](param, localVars);
+			}
 
-				var localVars:Dictionary = new Dictionary;
+			// for an exception action -- TimeAction
+			_initParamFactory.getTimeHanlder()(param, localVars);
 
-				var initHandlers:Array = _initParamFactory.createNeedStuff();
-				len = initHandlers.length;
-				for (i = 0; i < len; ++i)
-				{
-					initHandlers[i](param, localVars);
-				}
-
-				// for an exception action -- TimeAction
-				_initParamFactory.getTimeHanlder()(param, localVars);
-
-				// for normal actions
-				var actionInitHandlers:Vector.<Function> = _actionsFactory.getInitParamHandlers();
-				len = actionInitHandlers.length;
-				for (i = 0; i < len; ++i)
-				{
-					actionInitHandlers[i](param, localVars);
-				}
-			};
+			// for normal actions
+			var actionInitHandlers:Vector.<Function> = _actionsFactory.getInitParamHandlers();
+			len = actionInitHandlers.length;
+			for (i = 0; i < len; ++i)
+			{
+				actionInitHandlers[i](param, localVars);
+			}
 		}
 
 	}

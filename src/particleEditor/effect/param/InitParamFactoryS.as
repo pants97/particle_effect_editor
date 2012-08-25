@@ -1,4 +1,5 @@
-package  particleEditor.effect.param {
+package particleEditor.effect.param
+{
 	import particleEditor.edit.IImportable;
 	/**
 	 * ...
@@ -30,7 +31,7 @@ package  particleEditor.effect.param {
 		
 		public function getTimeHanlder():Function
 		{
-			return timeSelectionPane.createNeedStuff() as Function;
+			return timeSelectionPane.initializeLocalVars;
 		}
 		
 		public function get tagName():String

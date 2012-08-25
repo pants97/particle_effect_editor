@@ -47,21 +47,18 @@ class VelocityParamS extends FunctionEditorWithPropertyBaseS
 		valueInput = new VectorComboBoxS(varListModel);
 	}
 	
-	override public function createNeedStuff():Function
-	{
-		return function(param:ParticleParam, localVars:Dictionary):void
-		{
-			var array:Array = valueInput.getValue();
-			var x:Number = array[0]?localVars[array[0]]:0;
-			var y:Number = array[1]?localVars[array[1]]:0;
-			var z:Number = array[2]?localVars[array[2]]:0;
-			param["VelocityLocal"] = new Vector3D(x, y, z);
-		};
-	}
-	
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
 		valueInput.deserialize(xml.@velocity);
+	}
+
+	override public function initializeLocalVars(param:ParticleParam, localVars:Dictionary):void
+	{
+		var array:Array = valueInput.getValue();
+		var x:Number = array[0]?localVars[array[0]]:0;
+		var y:Number = array[1]?localVars[array[1]]:0;
+		var z:Number = array[2]?localVars[array[2]]:0;
+		param["VelocityLocal"] = new Vector3D(x, y, z);
 	}
 }

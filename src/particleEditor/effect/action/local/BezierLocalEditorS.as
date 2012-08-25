@@ -49,27 +49,24 @@ class BezierParamS extends FunctionEditorWithPropertyBaseS
 		endInput = new VectorComboBoxS(varListModel);
 	}
 	
-	override public function createNeedStuff():Function
-	{
-		return function(param:ParticleParam, localVars:Dictionary):void
-		{
-			var array:Array = controlInput.getValue();
-			var x1:Number = array[0]?localVars[array[0]]:0;
-			var y1:Number = array[1]?localVars[array[1]]:0;
-			var z1:Number = array[2]?localVars[array[2]]:0;
-			
-			array = endInput.getValue();
-			var x2:Number = array[0]?localVars[array[0]]:0;
-			var y2:Number = array[1]?localVars[array[1]]:0;
-			var z2:Number = array[2]?localVars[array[2]]:0;
-			param["BezierCurvelocal"] = [new Vector3D(x1, y1, z1), new Vector3D(x2, y2, z2)];
-		};
-	}
-	
 	override public function importCode(xml:XML):void
 	{
 		super.importCode(xml);
 		controlInput.deserialize(xml.@control);
 		endInput.deserialize(xml.@end);
+	}
+
+	override public function initializeLocalVars(param:ParticleParam, localVars:Dictionary):void
+	{
+		var array:Array = controlInput.getValue();
+		var x1:Number = array[0]?localVars[array[0]]:0;
+		var y1:Number = array[1]?localVars[array[1]]:0;
+		var z1:Number = array[2]?localVars[array[2]]:0;
+		
+		array = endInput.getValue();
+		var x2:Number = array[0]?localVars[array[0]]:0;
+		var y2:Number = array[1]?localVars[array[1]]:0;
+		var z2:Number = array[2]?localVars[array[2]]:0;
+		param["BezierCurvelocal"] = [new Vector3D(x1, y1, z1), new Vector3D(x2, y2, z2)];
 	}
 }

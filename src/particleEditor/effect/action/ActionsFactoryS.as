@@ -53,7 +53,7 @@ package particleEditor.effect.action
 
 		public function getInitParamHandlers():Vector.<Function>
 		{
-			if (_initHandlers == null)
+			if (!_initHandlers)
 			{
 				_initHandlers = new Vector.<Function>();
 				var listModel:Vector.<ActionProperty> = _localFactory.actionProperties();

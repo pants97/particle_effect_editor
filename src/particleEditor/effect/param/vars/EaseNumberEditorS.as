@@ -1,4 +1,5 @@
-package particleEditor.effect.param.vars {
+package particleEditor.effect.param.vars
+{
 	import a3dparticle.particle.ParticleParam;
 
 	import particleEditor.easing.EaseDefinition;
@@ -26,17 +27,10 @@ package particleEditor.effect.param.vars {
 			easeInput = new ComboBoxInputS(EaseDefinition.ALL_EASE);		
 			addVarProperty("");
 		}
-		
-		
-		override public function createNeedStuff():Function
+
+		private function get ease():EaseDefinition
 		{
-			var start:Number = startInput;
-			var end:Number = endInput;
-			var ease:EaseDefinition = easeInput.getValue() as EaseDefinition;
-			return function(_param:ParticleParam, localVars:Dictionary):void 
-			{
-				localVars[getVarProperty("")] = ease.easeFunction(_param.index,start,end-start,_param.total);
-			};
+			return easeInput.getValue() as EaseDefinition;
 		}
 		
 		override public function importCode(xml:XML):void
@@ -45,6 +39,11 @@ package particleEditor.effect.param.vars {
 			startInput=Number(xml.@start);
 			endInput=Number(xml.@end);
 			easeInput.deserialize(xml.@ease);
+		}
+
+		override public function initializeLocalVars(param:ParticleParam, localVars:Dictionary):void
+		{
+			localVars[getVarProperty("")] = ease.easeFunction(param.index,startInput,endInput-startInput,param.total);
 		}
 		
 	}
