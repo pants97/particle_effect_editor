@@ -14,10 +14,12 @@ package particleEditor
 
 		private var _particleGeneraters:Vector.<EffectFactoryS>;
 		private var _rawData:*;
+		private var _sampleCountMultiplier:Number = 1.0;
 
-		public function EffectGroupFactoryS()
+		public function EffectGroupFactoryS(sampleCountMultiplier:Number = 1.0)
 		{
 			_particleGeneraters = new Vector.<EffectFactoryS>;
+			_sampleCountMultiplier = sampleCountMultiplier;
 		}
 
 		public function get tagName():String
@@ -31,7 +33,7 @@ package particleEditor
 			_particleGeneraters = new Vector.<EffectFactoryS>;
 			for each (var effect:XML in code.effect)
 			{
-				var system:EffectFactoryS = new EffectFactoryS();
+				var system:EffectFactoryS = new EffectFactoryS(_sampleCountMultiplier);
 				system.importCode(effect);
 				_particleGeneraters.push(system);
 			}

@@ -18,9 +18,9 @@ package particleEditor.effect.generater.subGenerate
 		private var weightSampleContainer:Vector.<WeightSampePaneS>;
 		private var countInput:int;
 
-		public function WeightGeneraterEditorS(sampleModel:Vector.<SampleProperty>)
+		public function WeightGeneraterEditorS(sampleModel:Vector.<SampleProperty>, sampleCountMultiplier:Number = 1.0)
 		{
-			super();
+			super(sampleCountMultiplier);
 			_sampleModel = sampleModel;
 			weightSampleContainer = new Vector.<WeightSampePaneS>();
 		}
@@ -37,7 +37,7 @@ package particleEditor.effect.generater.subGenerate
 				samples.push(pane.sampleProperty.getNewValue());
 				weights.push(pane.weightInput);
 			}
-			return new MutiWeightGenerater(samples, weights, countInput);
+			return new MutiWeightGenerater(samples, weights, int(countInput * _sampleCountMultiplier + 1));
 		}
 
 		override public function importCode(xml:XML):void

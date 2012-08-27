@@ -22,8 +22,11 @@ package particleEditor.effect.generater
 		
 		private var _editorPane:GeneraterEditorBaseS;
 		
-		public function GeneraterFactoryS() 
+		private var _sampleCountMultiplier:Number = 1.0;
+		
+		public function GeneraterFactoryS(sampleCountMultiplier:Number = 1.0) 
 		{
+			_sampleCountMultiplier = sampleCountMultiplier;
 			_shapeFactory = new ShapeFactoryS();
 			_materialFactory = new MaterialFactoryS();
 			_samplesFactory = new SamplesFactoryS(_shapeFactory.shapeProperties(), _materialFactory.materialProperties());	
@@ -42,7 +45,7 @@ package particleEditor.effect.generater
 			_samplesFactory.importCode(xml[_samplesFactory.tagName][0]);
 			
 			var cls:Class = EditorDefinition.getClassByNameS(xml.output.editor.@clazz) as Class;
-			_editorPane = GeneraterEditorBaseS(new cls(_samplesFactory.sampleProperties()));
+			_editorPane = GeneraterEditorBaseS(new cls(_samplesFactory.sampleProperties(), _sampleCountMultiplier));
 			_editorPane.importCode(xml.output[_editorPane.tagName][0]);
 		}
 		

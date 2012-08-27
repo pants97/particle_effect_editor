@@ -25,10 +25,10 @@ package particleEditor.effect
 		private var _actionsFactory:ActionsFactoryS;
 		private var _initParamFactory:InitParamFactoryS;
 
-		public function EffectFactoryS()
+		public function EffectFactoryS(sampleCountMultiplier:Number = 1.0)
 		{
 
-			_generaterFactory = new GeneraterFactoryS();
+			_generaterFactory = new GeneraterFactoryS(sampleCountMultiplier);
 			_initParamFactory = new InitParamFactoryS();
 
 			_actionsFactory = new ActionsFactoryS(_initParamFactory.getVarListModel());

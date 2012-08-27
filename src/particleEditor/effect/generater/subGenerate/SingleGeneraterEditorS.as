@@ -17,8 +17,9 @@ package particleEditor.effect.generater.subGenerate
 		private var _sampleModel:Vector.<SampleProperty>;
 		private var _sampleIndex:int;
 
-		public function SingleGeneraterEditorS(sampleModel:Vector.<SampleProperty>)
+		public function SingleGeneraterEditorS(sampleModel:Vector.<SampleProperty>, sampleCountMultiplier:Number = 1.0)
 		{
+			super(sampleCountMultiplier);
 			_sampleModel = sampleModel;
 		}
 
@@ -27,7 +28,7 @@ package particleEditor.effect.generater.subGenerate
 			if (_sampleIndex >= 0)
 			{
 				var sample:ParticleSample = _sampleModel[_sampleIndex].getNewValue();
-				return new SingleGenerater(sample, countInput);
+				return new SingleGenerater(sample, int(countInput * _sampleCountMultiplier + 1));
 			}
 			else
 			{
