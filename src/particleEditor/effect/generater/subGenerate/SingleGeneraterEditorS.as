@@ -16,6 +16,8 @@ package particleEditor.effect.generater.subGenerate
 		private var countInput:int;
 		private var _sampleModel:Vector.<SampleProperty>;
 		private var _sampleIndex:int;
+		
+		private var _generater:SingleGenerater;
 
 		public function SingleGeneraterEditorS(sampleModel:Vector.<SampleProperty>, sampleCountMultiplier:Number = 1.0)
 		{
@@ -25,16 +27,20 @@ package particleEditor.effect.generater.subGenerate
 
 		override public function createNeedStuff():GeneraterBase
 		{
-			if (_sampleIndex >= 0)
+			if (!_generater)
 			{
-				var sample:ParticleSample = _sampleModel[_sampleIndex].getNewValue();
-				return new SingleGenerater(sample, int(countInput * _sampleCountMultiplier + 1));
+				if (_sampleIndex >= 0)
+				{
+					var sample:ParticleSample = _sampleModel[_sampleIndex].getNewValue();
+					_generater = new SingleGenerater(sample, int(countInput * _sampleCountMultiplier + 1));
+				}
+				else
+				{
+					throw new Error("can not get generater");
+					return null;
+				}
 			}
-			else
-			{
-				throw new Error("can not get generater");
-				return null;
-			}
+			return _generater;
 		}
 
 		override public function importCode(xml:XML):void
